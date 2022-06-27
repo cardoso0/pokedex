@@ -8,7 +8,7 @@ export const Main = styled.main`
   max-width: 90%;
   margin: 0 auto;
   padding: 0.5em 0 0.5em 0;
-  border: 1px solid black;
+  // border: 1px solid black;
 
   .pokebola {
     display: none;
