@@ -19,31 +19,26 @@ export const searchPokemonData = pokemon => fetchData(searchPokemon(pokemon))
 
 /* Requisições direcionadas ao Cards */
 
-export const getPokemons = async (limit = 25, offset = 0) => {
-  try {
-    let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
-    const response = await fetch(url)
-    return await response.json()
-  } catch (error) {
-    console.log("error: ", error)
-  }
-}
+const paginationPokemons = (limit, offset) => 
+`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
 
-export const getPokemonData = async (url) => {
-  try {
-    const response = await fetch(url)
-    return await response.json()
-  } catch (error) {
-    console.log("error: ", error)
-  }
-}
+export const getPokemons = () => fetchData(paginationPokemons(10, 0))
+
+// export const getPokemonData = async (url) => {
+//   try {
+//     const response = await fetch(url)
+//     return await response.json()
+//   } catch (error) {
+//     console.log("error: ", error)
+//   }
+// }
 
 export const fetchPokemons = async (setLoading, setPokemons) => {
   try {
     setLoading(true)
     const data = await getPokemons()
     const promises = data.results.map(async (pokemon) => {
-      return getPokemonData(pokemon.url)
+      return fetchData(pokemon.url)
     })
     const results = await Promise.all(promises)
     console.log(results)
