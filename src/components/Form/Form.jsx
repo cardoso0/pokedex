@@ -32,7 +32,6 @@ export const Form = () => {
       {pokemonn ? (
         <div>
           <div>Nome: {pokemonn.name}</div>
-          <div>Order: {pokemonn.moves[0].move.url}</div>
           <img src={pokemonn.sprites.front_default} alt="" />
         </div>
       ) : null}

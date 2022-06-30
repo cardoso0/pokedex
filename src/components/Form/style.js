@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Bg = styled.div`
-  height: 500px;
-  max-width: 80%;
+  // height: 500px;
+  max-width: 90%;
   margin: 0 auto;
   
   form {
