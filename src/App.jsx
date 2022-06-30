@@ -1,12 +1,9 @@
 import { Header } from './components/Header/Header'
 import { Form } from './components/Form/Form'
 import { Footer } from './components/Footer/Footer'
-import './App.css'
 import { Cards } from './components/Cards/Cards'
 
 const App = () => {
-
-
 
   return (
     <div>

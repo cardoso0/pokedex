@@ -1,21 +1,15 @@
 import * as S from './style'
 import { useState } from 'react'
-import { getPokemonData } from '../../api'
+import { onSearchHandle } from '../../services/apiForm'
 
 export const Form = () => {
 
   const [inputValue, setInputValue] = useState("")
-  const [pokemonn, setPokemonn] = useState()
+  const [pokemon, setPokemon] = useState()
 
   const handleSubmit = event => {
     event.preventDefault()
-    onSearchHandle(inputValue)
-  }
-
-  const onSearchHandle = async pokemon => {
-    const result = await getPokemonData(pokemon)
-    setPokemonn(result)
-    console.log("pokemon: ", pokemonn)
+    onSearchHandle(inputValue, setPokemon)
   }
 
   return (
@@ -29,10 +23,10 @@ export const Form = () => {
         />
         <button>Enviar</button>
       </form>
-      {pokemonn ? (
+      {pokemon ? (
         <div>
-          <div>Nome: {pokemonn.name}</div>
-          <img src={pokemonn.sprites.front_default} alt="" />
+          <div>Nome: {pokemon.name}</div>
+          <img src={pokemon.sprites.front_default} alt="" />
         </div>
       ) : null}
     </S.Bg>

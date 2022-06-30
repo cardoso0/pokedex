@@ -1,6 +1,6 @@
 import * as S from './style'
 import { Pokemons } from '../Pokemons/Pokemons'
-import { fetchPokemons } from '../../api'
+import { fetchPokemons } from '../../services/api'
 import { useEffect, useState } from 'react'
 
 export const Cards = () => {
