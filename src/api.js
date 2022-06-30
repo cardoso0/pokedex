@@ -35,3 +35,19 @@ export const getPokemonData = async (url) => {
       console.log("error: ", error)
   }
 }
+
+export const fetchPokemons = async (setLoading, setPokemons) => {
+  try {
+    setLoading(true)
+    const data = await getPokemons()
+    const promises = data.results.map(async (pokemon) => {
+      return getPokemonData(pokemon.url)
+    })
+    const results = await Promise.all(promises)
+    console.log(results)
+    setPokemons(results)
+    setLoading(false)
+  } catch (error) {
+    console.log("fetchPokemons error: ", error)
+  }
+}
