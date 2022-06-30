@@ -9,7 +9,6 @@ export const Cards = () => {
   const [pokemons, setPokemons] = useState([])
 
   useEffect(() => {
-    console.log("carregou")
     fetchPokemons(setLoading, setPokemons)
   }, [])
 

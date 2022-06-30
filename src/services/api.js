@@ -17,7 +17,9 @@ const fetchData = async url => {
 
 export const searchPokemonData = pokemon => fetchData(searchPokemon(pokemon))
 
-export const getPokemons = async (limit = 5, offset = 0) => {
+/* Requisições direcionadas ao Cards */
+
+export const getPokemons = async (limit = 25, offset = 0) => {
   try {
     let url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
     const response = await fetch(url)

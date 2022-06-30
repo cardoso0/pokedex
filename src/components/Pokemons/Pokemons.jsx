@@ -6,7 +6,11 @@ export const Pokemons = (props) => {
 
   return (
     <S.Bg>
-      {pokemons.map((pokemon) => {
+      {loading ? (
+        <div>Carregando...Aguarde</div>
+      ) : (
+        <div>
+          {pokemons.map((pokemon) => {
           return (
             <div key={pokemon.id}>
               Nome: {pokemon.name}
@@ -19,6 +23,8 @@ export const Pokemons = (props) => {
             </div>
           )
         })}
+        </div>
+      )}
     </S.Bg>
   )
 }
