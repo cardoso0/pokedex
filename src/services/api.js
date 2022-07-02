@@ -22,7 +22,7 @@ export const searchPokemonData = pokemon => fetchData(searchPokemon(pokemon))
 const paginationPokemons = (limit, offset) => 
 `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
 
-export const getPokemons = () => fetchData(paginationPokemons(100, 0))
+export const getPokemons = () => fetchData(paginationPokemons(24, 0))
 
 export const fetchPokemons = async (setLoading, setPokemons) => {
   try {
@@ -32,8 +32,8 @@ export const fetchPokemons = async (setLoading, setPokemons) => {
       return fetchData(pokemon.url)
     })
     const results = await Promise.all(promises)
-    const randomResults = results.sort(() => 0.5 - Math.random())
-    setPokemons(randomResults)
+    // const randomResults = results.sort(() => 0.5 - Math.random())
+    setPokemons(results)
     setLoading(false)
   } catch (error) {
     console.log("fetchPokemons error: ", error)

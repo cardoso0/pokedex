@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Bg = styled.div`
-  // height: 500px;
   max-width: 90%;
   margin: 0 auto;
+  padding-bottom: 2rem;
   
   form {
     display: flex;

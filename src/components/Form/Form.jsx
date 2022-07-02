@@ -13,12 +13,11 @@ export const Form = () => {
   }
 
   return (
-    <S.Bg>
+    <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
         <input type="text"
           autoFocus="on"
           placeholder='Procure um Pokemon'
-          id="teste"
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button>Enviar</button>

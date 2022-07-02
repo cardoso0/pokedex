@@ -3,13 +3,45 @@ import styled from "styled-components";
 export const Bg = styled.div`
   max-width: 90%;
   margin: 0 auto;
-  // height: 500px;
 `
 
 export const Container = styled.div`
 
+  .pokemon {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    border: 1px solid #D6D58E;
+    border-radius: 10px;
+    background-color: #D6D58E;
+    .pokemonName {
+      text-align: center;
+    }
+    .pokemonId {
+      text-align: center;
+    }
+    .pokemonType {
+      text-align: center;
+    }
+    img {
+      width: 70%;
+    }
+    .img {
+      text-align: center;
+      // border: 1px solid black;
+    }
+  }
+
   .pokemons {
-    display: flex;
+    display: grid;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 
   .paginationBtns {
