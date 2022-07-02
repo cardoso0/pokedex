@@ -1,6 +1,6 @@
 import * as S from './style'
 import ReactPaginate from 'react-paginate'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const Pokemons = (props) => {
 
@@ -38,7 +38,7 @@ export const Pokemons = (props) => {
   }
 
   return (
-    <S.Bg>
+    <S.Bg id='main'>
       {loading ? (
         <div>Carregando...Aguarde</div>
       ) : (
@@ -56,6 +56,7 @@ export const Pokemons = (props) => {
             nextLinkClassName={"nextBtn"}
             disabledClassName={"paginationDisabled"}
             activeClassName={"paginationActive"}
+            onClick={() => window.scrollTo(0,0)}
           />
         </S.Container>
       )}
