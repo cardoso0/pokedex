@@ -22,7 +22,7 @@ export const searchPokemonData = pokemon => fetchData(searchPokemon(pokemon))
 const paginationPokemons = (limit, offset) => 
 `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
 
-export const getPokemons = () => fetchData(paginationPokemons(24, 0))
+export const getPokemons = () => fetchData(paginationPokemons(250, 0))
 
 export const fetchPokemons = async (setLoading, setPokemons) => {
   try {

@@ -6,7 +6,7 @@ export const Bg = styled.div`
 `
 
 export const Container = styled.div`
-
+// border: 1px solid black;
   .pokemon {
     width: 80%;
     margin: 0 auto;
@@ -40,24 +40,34 @@ export const Container = styled.div`
     }
 
     @media (min-width: 1024px) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 95%;
+      margin: 0 auto;
     }
   }
 
   .paginationBtns {
     height: 40px;
-    // border: 1px solid black;
+    margin: 10px 0;
     display: flex;
     justify-content: center;
-    list-style: none;
+    
+    @media (min-width: 768px) {
+      margin: 20px 0;
+    }
   }
 
   .paginationBtns a {
-    padding: 15px;
-    margin: 2px;
+    padding: 10px;
+    margin: 3px;
     border-radius: 5px;
     border: 1px solid red;
     cursor: pointer;
+
+    @media (min-width: 768px) {
+      padding: 1rem;
+      margin: 10px;
+    }
   }
 
   .paginationActive a {

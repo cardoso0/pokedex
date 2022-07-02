@@ -1,6 +1,6 @@
 import * as S from './style'
 import ReactPaginate from 'react-paginate'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 export const Pokemons = (props) => {
 
@@ -8,7 +8,7 @@ export const Pokemons = (props) => {
 
   const [pageNumber, setPageNumber] = useState(0)
 
-  const pokemonsPerPage = 12 //24
+  const pokemonsPerPage = 24
   const pagesVisited = pageNumber * pokemonsPerPage
 
   const firstLetterUpperCase = (pokemon) => pokemon.name[0].toUpperCase() + pokemon.name.substring(1)
@@ -19,11 +19,7 @@ export const Pokemons = (props) => {
       return (
         <div className='pokemon' key={pokemon.id}>
           <div className='pokemonName'>{firstLetterUpperCase(pokemon)}</div>
-          {/* <div>Habilidade: {pokemon.abilities[0].ability.name}</div> */}
           <div className='pokemonId'>#{pokemon.id}</div>
-          {/* <div>Experiencia Base: {pokemon.base_experience}</div> */}
-          {/* <div>Altura: {pokemon.height}</div> */}
-          {/* <div>Peso: {pokemon.weight}</div> */}
           <div className='img'>
             <img src={pokemon.sprites.front_default} alt="imagem do pokemon" />
           </div>
