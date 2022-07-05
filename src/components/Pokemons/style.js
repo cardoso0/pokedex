@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Bg = styled.div`
   max-width: 90%;
   margin: 0 auto;
+  height: 100vh;
 `
 
 export const Container = styled.div`
@@ -40,7 +41,7 @@ export const Container = styled.div`
     }
 
     @media (min-width: 1024px) {
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       width: 95%;
       margin: 0 auto;
     }
