@@ -1,6 +1,8 @@
 import * as S from './style'
 import { useState } from 'react'
 import { onSearchHandle } from '../../services/searchPokemon'
+import { Pokemon } from '../Pokemon/Pokemon'
+import { Pokemons } from '../Pokemons/Pokemons'
 
 export const Form = () => {
 
@@ -17,17 +19,15 @@ export const Form = () => {
       <form action="submit" onSubmit={handleSubmit}>
         <input type="text"
           autoFocus="on"
-          placeholder='Procure um Pokemon'
+          placeholder='Digite um Pokemon'
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button>Enviar</button>
       </form>
-      {pokemon ? (
-        <div>
-          <div>Nome: {pokemon.name}</div>
-          <img src={pokemon.sprites.front_default} alt="" />
-        </div>
-      ) : null}
+      {pokemon
+        ? <Pokemon pokemon={pokemon} />
+        : <Pokemons />
+      }
     </S.Bg>
   )
 }

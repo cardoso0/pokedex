@@ -1,16 +1,10 @@
-import { Header } from './components/Header/Header'
-import { Form } from './components/Form/Form'
-import { Footer } from './components/Footer/Footer'
-import { Pokemons } from './components/Pokemons/Pokemons'
+import { AllPokemons } from './pages/AllPokemons/AllPokemons'
 
 const App = () => {
 
   return (
     <div>
-      <Header />
-      <Form />
-      <Pokemons />
-      <Footer />
+      <AllPokemons />
     </div>
   )
 }

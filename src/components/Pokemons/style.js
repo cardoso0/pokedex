@@ -10,8 +10,7 @@ export const Container = styled.div`
 // border: 1px solid black;
   .pokemon {
     width: 80%;
-    margin: 0 auto;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem auto;
     border: 1px solid #D6D58E;
     border-radius: 10px;
     background-color: #D6D58E;
