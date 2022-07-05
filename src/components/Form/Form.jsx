@@ -1,6 +1,6 @@
 import * as S from './style'
 import { useState } from 'react'
-import { onSearchHandle } from '../../services/apiForm'
+import { onSearchHandle } from '../../services/searchPokemon'
 
 export const Form = () => {
 

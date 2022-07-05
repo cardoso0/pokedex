@@ -1,7 +1,7 @@
 import { Header } from './components/Header/Header'
 import { Form } from './components/Form/Form'
 import { Footer } from './components/Footer/Footer'
-import { Cards } from './components/Cards/Cards'
+import { Pokemons } from './components/Pokemons/Pokemons'
 
 const App = () => {
 
@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <Header />
       <Form />
-      <Cards />
+      <Pokemons />
       <Footer />
     </div>
   )

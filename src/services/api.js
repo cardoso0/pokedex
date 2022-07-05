@@ -32,7 +32,6 @@ export const fetchPokemons = async (setLoading, setPokemons) => {
       return fetchData(pokemon.url)
     })
     const results = await Promise.all(promises)
-    // const randomResults = results.sort(() => 0.5 - Math.random())
     setPokemons(results)
     setLoading(false)
   } catch (error) {

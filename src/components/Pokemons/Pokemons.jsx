@@ -1,17 +1,25 @@
 import * as S from './style'
 import ReactPaginate from 'react-paginate'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { fetchPokemons } from '../../services/api'
 
-export const Pokemons = (props) => {
+export const Pokemons = () => {
 
-  const { pokemons, loading } = props
-
+  const [loading, setLoading] = useState(false)
+  const [pokemons, setPokemons] = useState([])
   const [pageNumber, setPageNumber] = useState(0)
+  
+  useEffect(() => {
+    fetchPokemons(setLoading, setPokemons)
+  }, [])
 
   const pokemonsPerPage = 24
   const pagesVisited = pageNumber * pokemonsPerPage
-
   const firstLetterUpperCase = (pokemon) => pokemon.name[0].toUpperCase() + pokemon.name.substring(1)
+  const pageCount = Math.ceil(pokemons.length / pokemonsPerPage)
+  const changePage = ({ selected }) => {
+    setPageNumber(selected)
+  }
 
   const displayPokemons = pokemons
     .slice(pagesVisited, pagesVisited + pokemonsPerPage)
@@ -28,13 +36,8 @@ export const Pokemons = (props) => {
       )
     })
 
-  const pageCount = Math.ceil(pokemons.length / pokemonsPerPage)
-  const changePage = ({ selected }) => {
-    setPageNumber(selected)
-  }
-
   return (
-    <S.Bg id='main'>
+    <S.Bg>
       {loading ? (
         <div>Carregando...Aguarde</div>
       ) : (
@@ -52,7 +55,7 @@ export const Pokemons = (props) => {
             nextLinkClassName={"nextBtn"}
             disabledClassName={"paginationDisabled"}
             activeClassName={"paginationActive"}
-            onClick={() => window.scrollTo(0,0)}
+            onClick={() => window.scrollTo(0, 0)}
           />
         </S.Container>
       )}
