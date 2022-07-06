@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { verifyType } from "../verifyType";
+import { colors } from "../colorsBgPokemons";
 
 export const Pokemon = styled.div`
   width: 80%;
   margin: 1.5rem auto;
   border: 1px solid #D6D58E;
   border-radius: 10px;
-  background-color: ${verifyType};
+  background-color: ${prop => colors[prop.pokemonType]};
   
   @media (max-width: 768px) {
     width: 30%

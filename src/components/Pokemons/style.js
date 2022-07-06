@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { verifyType } from "../verifyType";
+import { colors } from "../colorsBgPokemons";
 
 export const Bg = styled.div`
   max-width: 90%;
@@ -12,7 +12,7 @@ export const Pokemon = styled.div`
     margin: 1.5rem auto;
     border: 1px solid #D6D58E;
     border-radius: 10px;
-    background-color: ${verifyType};
+    background-color: ${prop => colors[prop.pokemonType]};
 
     .pokemonName {
       text-align: center;
