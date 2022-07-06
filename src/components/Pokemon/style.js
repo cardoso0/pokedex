@@ -1,19 +1,5 @@
 import styled from "styled-components";
-
-const colors = {
-  'electric': 'yellow',
-  'water': 'blue',
-  'grass': '#D6D58E',
-  'fire': 'red'
-}
-
-const verifyType = (prop) => {
-  for (let color in colors) {
-    if (prop.pokemonType == color) {
-      return colors[color]
-    }
-  }
-}
+import { verifyType } from "../verifyType";
 
 export const Pokemon = styled.div`
   width: 80%;

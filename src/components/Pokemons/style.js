@@ -1,26 +1,11 @@
 import styled from "styled-components";
+import { verifyType } from "../verifyType";
 
 export const Bg = styled.div`
   max-width: 90%;
   margin: 0 auto;
   min-height: 100vh;
 `
-
-const colors = {
-  'eletric': 'yellow',
-  'water': 'blue',
-  'grass': '#D6D58E',
-  'fire': 'red'
-}
-
-const verifyType = (prop) => {
-  for (let color in colors) {
-    if (prop.pokemonType == color) {
-      return colors[color]
-    }
-  }
-}
-
 
 export const Pokemon = styled.div`
     width: 80%;
