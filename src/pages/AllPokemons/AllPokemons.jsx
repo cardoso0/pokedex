@@ -1,4 +1,4 @@
-import { Footer, Form, Header } from '../../components/index.js'
+import { Footer, Form, Header } from '../../components'
 
 export const AllPokemons = () => {
 
