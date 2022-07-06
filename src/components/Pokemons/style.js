@@ -15,7 +15,7 @@ const colors = {
 
 const verifyType = (prop) => {
   for (let color in colors) {
-    if (prop.pType == color) {
+    if (prop.pokemonType == color) {
       return colors[color]
     }
   }

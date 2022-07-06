@@ -1,7 +1,7 @@
 import * as S from './style'
 import ReactPaginate from 'react-paginate'
 import { useEffect, useState } from 'react'
-import { fetchPokemons, pokeColorData } from '../../services/api'
+import { fetchPokemons } from '../../services/api'
 
 export const Pokemons = () => {
 
@@ -24,19 +24,19 @@ export const Pokemons = () => {
   const displayPokemons = pokemons
     .slice(pagesVisited, pagesVisited + pokemonsPerPage)
     .map((pokemon) => {
-      const pType = pokemon.types[0].type.name
+      const pokemonType = pokemon.types[0].type.name
       return (
-        <S.Pokemon pType={pType} key={pokemon.id} >
+        <S.Pokemon pokemonType={pokemonType} key={pokemon.id} >
           <div className='pokemonName'>{firstLetterUpperCase(pokemon)}</div>
           <div className='pokemonId'>#{pokemon.id}</div>
           <div className='img'>
             <img src={pokemon.sprites.front_default} alt="imagem do pokemon" />
           </div>
-          <div className='pokemonType'>Tipo: {pType}</div>
+          <div className='pokemonType'>Tipo: {pokemonType}</div>
         </S.Pokemon>
       )
     })
-    
+
   return (
     <S.Bg>
       {loading ? (
