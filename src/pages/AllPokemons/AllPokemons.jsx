@@ -1,12 +1,6 @@
-import { Footer } from "../../components/Footer/Footer"
-import { Form } from "../../components/Form/Form"
-import { Header } from "../../components/Header/Header"
-import { Pokemons } from "../../components/Pokemons/Pokemons"
-
+import { Footer, Form, Header } from '../../components/index.js'
 
 export const AllPokemons = () => {
-
-  
 
   return (
     <div>
