@@ -6,14 +6,29 @@ export const Bg = styled.div`
   min-height: 100vh;
 `
 
-export const Container = styled.div`
-// border: 1px solid black;
-  .pokemon {
+const colors = {
+  'eletric': 'yellow',
+  'water': 'blue',
+  'grass': '#D6D58E',
+  'fire': 'red'
+}
+
+const verifyType = (prop) => {
+  for (let color in colors) {
+    if (prop.pType == color) {
+      return colors[color]
+    }
+  }
+}
+
+
+export const Pokemon = styled.div`
     width: 80%;
     margin: 1.5rem auto;
     border: 1px solid #D6D58E;
     border-radius: 10px;
-    background-color: #D6D58E;
+    background-color: ${verifyType};
+
     .pokemonName {
       text-align: center;
     }
@@ -30,7 +45,10 @@ export const Container = styled.div`
       text-align: center;
       // border: 1px solid black;
     }
-  }
+`
+
+export const Container = styled.div`
+// border: 1px solid black;
 
   .pokemons {
     display: grid;
