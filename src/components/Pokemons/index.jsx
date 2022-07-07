@@ -2,14 +2,14 @@ import * as S from './style'
 import ReactPaginate from 'react-paginate'
 import { useEffect, useState } from 'react'
 import { fetchPokemons } from '../../services/api'
-import { firstLetterUpperCase } from '../../shared/firstLetterUpperCase'
+import { firstLetterUpperCase, firstLetterUpperCaseType } from '../../shared/firstLetterUpperCase'
 
 export const Pokemons = () => {
 
   const [loading, setLoading] = useState(false)
   const [pokemons, setPokemons] = useState([])
   const [pageNumber, setPageNumber] = useState(0)
-  
+
   useEffect(() => {
     fetchPokemons(setLoading, setPokemons)
   }, [])
@@ -20,7 +20,7 @@ export const Pokemons = () => {
   const changePage = ({ selected }) => {
     setPageNumber(selected)
   }
-
+  
   const displayPokemons = pokemons
     .slice(pagesVisited, pagesVisited + pokemonsPerPage)
     .map((pokemon) => {
@@ -32,11 +32,11 @@ export const Pokemons = () => {
           <div className='img'>
             <img src={pokemon.sprites.front_default} alt="imagem do pokemon" />
           </div>
-          <div className='pokemonType'>Tipo: {pokemonType}</div>
+          <div className='pokemonType'>Tipo: {firstLetterUpperCaseType(pokemon)}</div>
         </S.Pokemon>
       )
     })
-    
+
   return (
     <S.Bg>
       {loading ? (
