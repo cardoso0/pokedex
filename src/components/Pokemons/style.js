@@ -12,16 +12,21 @@ export const Pokemon = styled.div`
     margin: 1.5rem auto;
     border: 1px solid #D6D58E;
     border-radius: 10px;
-    background-color: ${prop => colors[prop.pokemonType]};
+    background: ${prop => colors[prop.pokemonType]};
 
-    .pokemonName {
+    .pokemonName, .pokemonId, .pokemonType{
       text-align: center;
+      font-weight: bold;
+    }
+    .pokemonName {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
     }
     .pokemonId {
-      text-align: center;
+      // text-align: center;
     }
     .pokemonType {
-      text-align: center;
+      padding-bottom: 0.5em;
     }
     img {
       width: 70%;
@@ -74,6 +79,6 @@ export const Container = styled.div`
   }
 
   .paginationActive a {
-    background-color: red;
+    border: 4px solid red;
   }
 `

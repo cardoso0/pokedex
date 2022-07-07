@@ -8,9 +8,14 @@ export const Pokemon = styled.div`
   border-radius: 10px;
   background-color: ${prop => colors[prop.pokemonType]};
   
-  @media (max-width: 768px) {
-    width: 30%
+  @media (min-width: 768px) {
+    width: 25%
   }
+
+  @media (min-width: 1024px) {
+    width: 20%;
+  }
+
   .pokemonName {
     text-align: center;
   }

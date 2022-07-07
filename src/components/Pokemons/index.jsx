@@ -36,7 +36,7 @@ export const Pokemons = () => {
         </S.Pokemon>
       )
     })
-
+    
   return (
     <S.Bg>
       {loading ? (
