@@ -66,8 +66,8 @@ export const Container = styled.div`
   }
 
   .paginationBtns a {
-    padding: 18px;
-    margin: 3px;
+    padding: 13px;
+    margin: 2px;
     border-radius: 5px;
     border: 1px solid red;
     cursor: pointer;
