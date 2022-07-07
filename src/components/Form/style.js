@@ -10,7 +10,14 @@ export const Bg = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 3em;
-    // border: 1px solid black;
-    // background-color: black;
+
+    input{
+      height: 2em;
+    }
+    button {
+      font-weight: bold;
+      background-color: white;
+      border: 1px solid #918c8c;
+    }
   }
 `
