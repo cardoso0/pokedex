@@ -12,14 +12,14 @@ export const Form = () => {
     event.preventDefault()
     onSearchHandle(inputValue, setPokemon)
   }
-
+  console.log(inputValue)
   return (
     <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
         <input type="text"
           autoFocus="on"
           placeholder='Digite um Pokemon'
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e) => setInputValue(e.target.value.toLowerCase())}
         />
         <button>Enviar</button>
       </form>
