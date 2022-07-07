@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../colorsBgPokemons";
+import { colors } from "../../shared/colorsBgPokemons";
 
 export const Bg = styled.div`
   max-width: 90%;

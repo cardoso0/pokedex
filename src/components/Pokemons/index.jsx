@@ -2,6 +2,7 @@ import * as S from './style'
 import ReactPaginate from 'react-paginate'
 import { useEffect, useState } from 'react'
 import { fetchPokemons } from '../../services/api'
+import { firstLetterUpperCase } from '../../shared/firstLetterUpperCase'
 
 export const Pokemons = () => {
 
@@ -15,7 +16,6 @@ export const Pokemons = () => {
 
   const pokemonsPerPage = 24
   const pagesVisited = pageNumber * pokemonsPerPage
-  const firstLetterUpperCase = (pokemon) => pokemon.name[0].toUpperCase() + pokemon.name.substring(1)
   const pageCount = Math.ceil(pokemons.length / pokemonsPerPage)
   const changePage = ({ selected }) => {
     setPageNumber(selected)

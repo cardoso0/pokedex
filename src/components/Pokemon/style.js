@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "../colorsBgPokemons";
+import { colors } from "../../shared/colorsBgPokemons";
 
 export const Pokemon = styled.div`
   width: 80%;
