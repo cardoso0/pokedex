@@ -110,7 +110,7 @@ Error generating stack: `+tt.message+`
       height: 70px;
     }
   }
-`;var pokedex="/assets/pokedex.e72316a3.png",pokebola="/assets/favicon.e455258e.png";const Header=()=>jsx(Bg$2,{children:jsxs(Main,{children:[jsx("img",{className:"logo",src:pokedex,alt:"logo pokedex"}),jsx("img",{className:"pokebola",src:pokebola,alt:"pokebola"})]})}),colors={normal:"#a8a878",fighting:"#c02038",flying:"#a890f0",poison:"#a040a0",ground:"#e0c068",rock:"#b8a038",bug:"#a8b820",ghost:"#705898",steel:"#b8b8d0",fire:"#f08030",water:"#6890f0",grass:"#78c850",electric:"#f8d030",psychic:"#f85888",ice:"#98d8d8",dragon:"#7038f8",dark:"#705848",fairy:"#ee99ac",unknown:"",shadow:""},Pokemon$2=styled.div`
+`;var pokedex="/pokedex/assets/pokedex.e72316a3.png",pokebola="/pokedex/assets/favicon.e455258e.png";const Header=()=>jsx(Bg$2,{children:jsxs(Main,{children:[jsx("img",{className:"logo",src:pokedex,alt:"logo pokedex"}),jsx("img",{className:"pokebola",src:pokebola,alt:"pokebola"})]})}),colors={normal:"#a8a878",fighting:"#c02038",flying:"#a890f0",poison:"#a040a0",ground:"#e0c068",rock:"#b8a038",bug:"#a8b820",ghost:"#705898",steel:"#b8b8d0",fire:"#f08030",water:"#6890f0",grass:"#78c850",electric:"#f8d030",psychic:"#f85888",ice:"#98d8d8",dragon:"#7038f8",dark:"#705848",fairy:"#ee99ac",unknown:"",shadow:""},Pokemon$2=styled.div`
   width: 80%;
   margin: 1.5rem auto;
   border: 1px solid #D6D58E;
