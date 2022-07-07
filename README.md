@@ -12,6 +12,8 @@
 </p>
 (Em breve)
 
+Clique <a href="https://cardoso0.github.io/pokedex/" target="_blank">aqui</a> para visualizar o projeto no seu navegador
+
 ### 🎲 Rodando o projeto na sua maquina
 
 ```bash
