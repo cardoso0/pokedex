@@ -22,9 +22,6 @@ export const Pokemon = styled.div`
       padding-top: 0.5em;
       padding-bottom: 0.5em;
     }
-    .pokemonId {
-      // text-align: center;
-    }
     .pokemonType {
       padding-bottom: 0.5em;
     }
@@ -33,13 +30,10 @@ export const Pokemon = styled.div`
     }
     .img {
       text-align: center;
-      // border: 1px solid black;
     }
 `
 
 export const Container = styled.div`
-// border: 1px solid black;
-
   .pokemons {
     display: grid;
     
