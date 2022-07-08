@@ -30,7 +30,7 @@ export const Pokemons = () => {
           <div className='pokemonName'>{firstLetterUpperCase(pokemon)}</div>
           <div className='pokemonId'>#{pokemon.id}</div>
           <div className='img'>
-            <img src={pokemon.sprites.front_default} alt="imagem do pokemon" />
+            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
           </div>
           <div className='pokemonType'>Tipo: {firstLetterUpperCaseType(pokemon)}</div>
         </S.Pokemon>
