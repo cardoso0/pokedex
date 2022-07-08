@@ -11,22 +11,11 @@ export const Pokemon = styled.div`
   border: 1px solid #D6D58E;
   border-radius: 10px;
   background-color: ${prop => colors[prop.pokemonType]};
-  
-  @media (min-width: 768px) {
-    width: 25%
-  }
+  text-align: center;
+  font-weight: bold;
 
-  @media (min-width: 1024px) {
-    width: 20%;
-  }
-
-  .pokemonName, .pokemonId, .pokemonType{
-    text-align: center;
-    font-weight: bold;
-  }
   .pokemonName {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding: 0.5em 0 0.5em 0;
   }
   .pokemonType {
     padding-bottom: 0.5em;
@@ -34,7 +23,12 @@ export const Pokemon = styled.div`
   img {
     width: 70%;
   }
-  .img {
-    text-align: center;
+
+  @media (min-width: 768px) {
+    width: ${prop => prop.medium ? '25%' : ''}
+  }
+  
+  @media (min-width: 1024px) {
+    width: ${prop => prop.large ? '20%' : ''}
   }
 `

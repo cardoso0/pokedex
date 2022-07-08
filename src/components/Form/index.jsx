@@ -1,7 +1,8 @@
 import * as S from './style'
-import { Pokemon, Pokemons } from '../index'
+import { /*Pokemon,*/ Pokemons } from '../index'
 import { useState } from 'react'
 import { onSearchHandle } from '../../services/searchPokemon'
+import { Pokemon } from '../Pokemon'
 
 export const Form = () => {
 
@@ -24,7 +25,7 @@ export const Form = () => {
         <button>Enviar</button>
       </form>
       {pokemon
-        ? <Pokemon pokemon={pokemon} />
+        ? <Pokemon pokemon={pokemon} large="20%"/>
         : <Pokemons />
       }
     </S.Bg>

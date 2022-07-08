@@ -2,7 +2,7 @@ import * as S from './style'
 import ReactPaginate from 'react-paginate'
 import { useEffect, useState } from 'react'
 import { fetchPokemons } from '../../services/api'
-import { firstLetterUpperCase, firstLetterUpperCaseType } from '../../shared/firstLetterUpperCase'
+import { Pokemon } from '../Pokemon'
 
 export const Pokemons = () => {
 
@@ -24,16 +24,8 @@ export const Pokemons = () => {
   const displayPokemons = pokemons
     .slice(pagesVisited, pagesVisited + pokemonsPerPage)
     .map((pokemon) => {
-      const pokemonType = pokemon.types[0].type.name
       return (
-        <S.Pokemon pokemonType={pokemonType} key={pokemon.id} >
-          <div className='pokemonName'>{firstLetterUpperCase(pokemon)}</div>
-          <div className='pokemonId'>#{pokemon.id}</div>
-          <div className='img'>
-            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-          </div>
-          <div className='pokemonType'>Tipo: {firstLetterUpperCaseType(pokemon)}</div>
-        </S.Pokemon>
+        <Pokemon pokemon={pokemon} key={pokemon.id}/>
       )
     })
 
