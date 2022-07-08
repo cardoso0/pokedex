@@ -29,6 +29,6 @@ export const Pokemon = styled.div`
   }
   
   @media (min-width: 1024px) {
-    width: ${prop => prop.large ? '20%' : ''}
+    width: ${prop => prop.large}
   }
 `

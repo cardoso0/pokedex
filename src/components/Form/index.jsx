@@ -13,7 +13,7 @@ export const Form = () => {
     event.preventDefault()
     onSearchHandle(inputValue, setPokemon)
   }
-  console.log(inputValue)
+
   return (
     <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
@@ -25,7 +25,7 @@ export const Form = () => {
         <button>Enviar</button>
       </form>
       {pokemon
-        ? <Pokemon pokemon={pokemon} large="20%"/>
+        ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'}/>
         : <Pokemons />
       }
     </S.Bg>

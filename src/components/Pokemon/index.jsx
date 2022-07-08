@@ -3,13 +3,11 @@ import * as S from './style'
 
 export const Pokemon = props => {
 
-  const { pokemon } = props
-
-  
+  const { pokemon, large, medium } = props
 
   const pokemonType = pokemon.types[0].type.name
   return (
-    <S.Pokemon pokemonType={pokemonType} >
+    <S.Pokemon pokemonType={pokemonType} large={large} medium={medium}>
       <div className='pokemonName'>{firstLetterUpperCase(pokemon)}</div>
       <div className='pokemonId'>#{pokemon.id}</div>
       <div className='img'>
