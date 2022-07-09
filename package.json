@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "homepage": "https://cardoso0.github.io/pokedex/",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
