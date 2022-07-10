@@ -20,9 +20,10 @@ module.exports = async () => {
 const {defaults} = require('jest-config');
 module.exports = {
   // ...
-  moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
+  moduleFileExtensions: [...defaults.moduleFileExtensions, 'js', 'jsx'],
   // ...
 };
+
 module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -108,7 +109,9 @@ module.exports = {
   // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  "moduleNameMapper": {
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
+  },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
