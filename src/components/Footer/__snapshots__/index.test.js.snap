@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component rendering 1`] = `
+<footer
+  className="sc-bczRLJ xgqim"
+>
+  <main
+    className="sc-gsnTZi VpOde"
+  >
+    <p>
+      Desenvolvido por Felipe Cardoso
+    </p>
+  </main>
+</footer>
+`;
