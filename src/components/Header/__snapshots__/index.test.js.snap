@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component component rendering | snapshot 1`] = `
+<div
+  className="sc-bczRLJ xgqim"
+>
+  <main
+    className="sc-gsnTZi fPkEvo"
+  >
+    <img
+      alt="logo pokedex"
+      className="logo"
+      src={Object {}}
+    />
+    <img
+      alt="pokebola"
+      className="pokebola"
+      src={Object {}}
+    />
+  </main>
+</div>
+`;
