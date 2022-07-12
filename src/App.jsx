@@ -1,10 +1,10 @@
-import { AllPokemons } from './pages/AllPokemons/AllPokemons'
+import { Home } from './pages/Home/Home'
 
 const App = () => {
 
   return (
     <div>
-      <AllPokemons />
+      <Home />
     </div>
   )
 }
