@@ -1,7 +1,7 @@
 import * as S from './style'
-import { Pokemon } from '../index'
 import { useState } from 'react'
 import { onSearchHandle } from '../../services/searchPokemon'
+import { Pokemon } from '../Pokemon'
 
 export const Form = () => {
 
