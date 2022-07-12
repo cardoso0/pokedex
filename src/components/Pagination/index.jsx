@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { fetchPokemons } from '../../services/api'
 import { Pokemon } from '../Pokemon'
 
-export const Pokemons = () => {
+export const Pagination = () => {
 
   const [loading, setLoading] = useState(false)
   const [pokemons, setPokemons] = useState([])

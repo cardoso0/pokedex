@@ -1,8 +1,7 @@
 import * as S from './style'
-import { /*Pokemon,*/ Pokemons } from '../index'
+import { Pokemon, Pagination } from '../index'
 import { useState } from 'react'
 import { onSearchHandle } from '../../services/searchPokemon'
-import { Pokemon } from '../Pokemon'
 
 export const Form = () => {
 
@@ -26,7 +25,7 @@ export const Form = () => {
       </form>
       {pokemon
         ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'}/>
-        : <Pokemons />
+        : <Pagination />
       }
     </S.Bg>
   )

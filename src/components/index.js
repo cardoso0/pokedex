@@ -1,11 +1,13 @@
 import { Footer } from './Footer'
 import { Form } from './Form'
 import { Header } from './Header'
-import { Pokemons } from './Pokemons'
+import { Pagination } from './Pagination'
+import { Pokemon } from './Pokemon'
 
 export {
   Footer,
   Form,
   Header,
-  Pokemons
+  Pagination,
+  Pokemon
 }
