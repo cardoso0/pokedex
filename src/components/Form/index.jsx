@@ -1,5 +1,5 @@
 import * as S from './style'
-import { Pokemon, Pagination } from '../index'
+import { Pokemon } from '../index'
 import { useState } from 'react'
 import { onSearchHandle } from '../../services/searchPokemon'
 
@@ -24,8 +24,7 @@ export const Form = () => {
         <button>Enviar</button>
       </form>
       {pokemon
-        ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'}/>
-        : <Pagination />
+        && <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'}/>
       }
     </S.Bg>
   )
