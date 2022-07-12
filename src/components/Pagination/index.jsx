@@ -2,7 +2,7 @@ import * as S from './style'
 import ReactPaginate from 'react-paginate'
 import { useEffect, useState } from 'react'
 import { fetchPokemons } from '../../services/api'
-import { Pokemon } from '../Pokemon'
+import { Pokemon } from '../index'
 
 export const Pagination = () => {
 
@@ -32,7 +32,7 @@ export const Pagination = () => {
   return (
     <S.Bg>
       {loading ? (
-        <div>Carregando...Aguarde</div>
+        <S.Loading></S.Loading>
       ) : (
         <S.Container>
           <div className='pokemons'>{displayPokemons}</div>

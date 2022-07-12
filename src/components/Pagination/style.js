@@ -6,30 +6,20 @@ export const Bg = styled.div`
   min-height: 100vh;
 `
 
-// export const Pokemon = styled.div`
-//     width: 80%;
-//     margin: 1.5rem auto;
-//     border: 1px solid #D6D58E;
-//     border-radius: 10px;
-//     background: ${prop => colors[prop.pokemonType]};
-
-//     .pokemonName, .pokemonId, .pokemonType{
-//       text-align: center;
-//       font-weight: bold;
-//     }
-//     .pokemonName {
-//       padding: 0.5em 0 0.5em 0;
-//     }
-//     .pokemonType {
-//       padding-bottom: 0.5em;
-//     }
-//     img {
-//       width: 70%;
-//     }
-//     .img {
-//       text-align: center;
-//     }
-// `
+export const Loading = styled.div`
+  animation: is-rotating 1s infinite;
+  border: 6px solid red;
+  border-radius: 50%;
+  border-top-color: #51d4db;
+  height: 50px;
+  width: 50px;
+  margin: 3em auto;
+  @keyframes is-rotating {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+`
 
 export const Container = styled.div`
   .pokemons {
