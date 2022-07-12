@@ -4,6 +4,18 @@ export const Bg = styled.div`
   max-width: 90%;
   margin: 0 auto;
   min-height: 100vh;
+  .buscar {
+    // border: 1px solid black;
+    width: 10rem;
+    text-align: center;
+    padding: 0.5rem;
+    color: white;
+    background-color: red;
+    margin: 1em auto;
+  }
+  a {
+    text-decoration: none;
+  }
 `
 
 export const Loading = styled.div`

@@ -1,9 +1,9 @@
 import * as S from './style'
-import { useState, useEffect } from 'react'
 import ReactPaginate from 'react-paginate'
-import { Footer, Form, Header } from '../../components'
+import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Footer, Header, Pokemon } from '../../components'
 import { fetchPokemons } from '../../services/api'
-import { Pokemon } from '../../components/index'
 
 export const Home = () => {
   const [loading, setLoading] = useState(false)
@@ -32,8 +32,8 @@ export const Home = () => {
   return (
     <div>
       <Header />
-      <Form />
       <S.Bg>
+      <Link to="/pokedex/searchpokemon"><div className="buscar">Buscar Pokemon</div></Link>
         {loading ? (
           <S.Loading></S.Loading>
         ) : (
