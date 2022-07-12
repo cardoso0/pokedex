@@ -1,10 +1,10 @@
-import { Home } from './pages/Home'
+import { MainRoutes } from './routes'
 
 const App = () => {
 
   return (
     <div>
-      <Home />
+      <MainRoutes />
     </div>
   )
 }
