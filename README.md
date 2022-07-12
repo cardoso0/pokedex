@@ -1,5 +1,5 @@
 <h1 align="center">Pokédex</h1>
-
+<p> Nessa aplicação podemos consultar pokemons. Ao iniciar, temos uma lista completa com todos pokemons. E também é possível procurar por um pokemon especifico. </p>
 <h4 align="center"> 
 	🚧  React Select 🚀 Em construção...  🚧
 </h4>
