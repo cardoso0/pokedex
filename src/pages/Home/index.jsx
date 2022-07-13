@@ -1,12 +1,29 @@
 import * as S from './style'
 import ReactPaginate from 'react-paginate'
 import { Link } from 'react-router-dom'
-import { Footer, Header } from '../../components'
-import { usePagination } from '../../hook/usePagination'
+import { useEffect, useState } from 'react'
+import { Footer, Header, Pokemon } from '../../components'
+import { usePagination } from '../../hooks/usePagination'
+import { fetchPokemons } from '../../services/api'
 
 export const Home = () => {
-  
-  const { loading, pageCount, changePage, displayPokemons } = usePagination()
+
+  const [loading, setLoading] = useState(false)
+  const [pokemons, setPokemons] = useState([])
+
+  const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
+
+  useEffect(() => {
+    fetchPokemons(setLoading, setPokemons)
+  }, [])
+
+  const displayPokemons = pokemons
+    .slice(pagesVisited, pagesVisited + itensPerPage)
+    .map((pokemon) => {
+      return (
+        <Pokemon pokemon={pokemon} key={pokemon.id} />
+      )
+  })
 
   return (
     <div>
