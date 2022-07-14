@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Footer, Header, Pokemon } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
-import { fetchPokemons } from '../../services/api'
+import { getAllPokemons } from '../../services/getPokemons'
 
 export const Home = () => {
 
@@ -13,8 +13,20 @@ export const Home = () => {
 
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
 
+  const recebeResultado = async () => {
+    try {
+      setLoading(true)
+      const response = await
+        getAllPokemons()
+      setPokemons(response)
+      setLoading(false)
+    } catch {
+      alert('Deu errado')
+    }
+  }
+
   useEffect(() => {
-    fetchPokemons(setLoading, setPokemons)
+    recebeResultado()
   }, [])
 
   const displayPokemons = pokemons
@@ -23,13 +35,13 @@ export const Home = () => {
       return (
         <Pokemon pokemon={pokemon} key={pokemon.id} />
       )
-  })
+    })
 
   return (
     <div>
       <Header />
       <S.Bg>
-      <Link to="/pokedex/searchpokemon"><div className="buscar">Buscar Pokemon</div></Link>
+        <Link to="/pokedex/searchpokemon"><div className="buscar">Buscar Pokemon</div></Link>
         {loading ? (
           <S.Loading></S.Loading>
         ) : (
