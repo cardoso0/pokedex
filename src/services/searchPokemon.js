@@ -1,6 +1,12 @@
-import { searchPokemonData } from "./api"
+import api from "./api"
 
-export const onSearchHandle = async (pokemon, setPokemon) => {
-  const result = await searchPokemonData(pokemon)
-  setPokemon(result)
+export const getPokemonData = async (pokemon) => {
+  try {
+    const { data } = await
+      api.get(`pokemon/${pokemon}/`)
+    return data
+
+  } catch (error) {
+    throw Error(console.log(error))
+  }
 }
