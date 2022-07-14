@@ -27,11 +27,6 @@ const fetchData = async url => {
   }
 }
 
-const searchPokemon = pokemon =>
-  `https://pokeapi.co/api/v2/pokemon/${pokemon}/`
-
-export const searchPokemonData = pokemon => fetchData(searchPokemon(pokemon))
-
 /* Requisições direcionadas ao Cards */
 
 const paginationPokemons = (limit, offset) => 
