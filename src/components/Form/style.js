@@ -21,3 +21,13 @@ export const Bg = styled.div`
     }
   }
 `
+export const Erro = styled.div`
+  text-align: center;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 30%;
+    border-radius: 10px;
+  }
+`

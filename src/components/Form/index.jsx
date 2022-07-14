@@ -1,7 +1,8 @@
 import * as S from './style'
 import { useState } from 'react'
-import { getPokemonData } from '../../services/searchPokemon'
+import { searchPokemon } from '../../services/searchPokemon'
 import { Pokemon } from '../Pokemon'
+import qualPokemon from '../../assets/qualPokemon.jpg'
 
 export const Form = () => {
 
@@ -12,14 +13,16 @@ export const Form = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      const result = await getPokemonData(inputValue)
+      const result = await searchPokemon(inputValue)
       return setPokemon(result)
     } catch {
       setPokemon("")
-      setErro("Pokemon não encontrado")
+      setErro(
+        <img src={qualPokemon} alt='Quem é esse Pokemon?'/>
+      )
     }
   }
-  // console.log(pokemon)
+
   return (
     <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
@@ -32,7 +35,7 @@ export const Form = () => {
       </form>
       {pokemon
         ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'}/>
-        : erro
+        : <S.Erro>{erro}</S.Erro>
       }
     </S.Bg>
   )
