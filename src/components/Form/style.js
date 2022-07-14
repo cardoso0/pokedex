@@ -16,7 +16,7 @@ export const Bg = styled.div`
     }
     button {
       font-weight: bold;
-      background-color: white;
+      background-color: #fff;
       border: 1px solid #918c8c;
     }
   }
