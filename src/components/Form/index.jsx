@@ -8,7 +8,6 @@ export const Form = () => {
 
   const [inputValue, setInputValue] = useState("")
   const [pokemon, setPokemon] = useState()
-  const [isError, setIsError] = useState(false)
   const [isSearched, setIsSearched] = useState(false)
 
   const handleSubmit = async (event) => {
@@ -16,15 +15,12 @@ export const Form = () => {
     try {
       const result = await searchPokemon(inputValue)
       setPokemon(result)
-      setIsError(false)
       setIsSearched(true)
     } catch {
-      setIsSearched(false)
       setPokemon("")
-      setIsError(true)
     }
   }
-  // console.log(pokemon)
+  
   return (
     <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
@@ -35,11 +31,13 @@ export const Form = () => {
         />
         <button>Enviar</button>
       </form>
-      {pokemon
-        && <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'} />
-      }
-      {isError === true
-        && <S.Error><img src={qualPokemon} alt='Quem é esse Pokemon?' /></S.Error>
+      {isSearched &&
+        <div>
+          {pokemon
+            ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'} />
+            : <S.Error><img src={qualPokemon} alt='Quem é esse Pokemon?' /></S.Error>
+          }
+        </div>
       }
     </S.Bg>
   )
