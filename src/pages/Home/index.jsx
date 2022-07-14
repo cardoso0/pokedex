@@ -13,7 +13,7 @@ export const Home = () => {
 
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
 
-  const recebeResultado = async () => {
+  const fetchData = async () => {
     try {
       setLoading(true)
       const response = await
@@ -26,7 +26,7 @@ export const Home = () => {
   }
 
   useEffect(() => {
-    recebeResultado()
+    fetchData()
   }, [])
 
   const displayPokemons = pokemons
