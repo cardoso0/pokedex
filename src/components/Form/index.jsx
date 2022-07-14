@@ -1,18 +1,25 @@
 import * as S from './style'
 import { useState } from 'react'
-import { onSearchHandle } from '../../services/searchPokemon'
+import { getPokemonData } from '../../services/searchPokemon'
 import { Pokemon } from '../Pokemon'
 
 export const Form = () => {
 
   const [inputValue, setInputValue] = useState("")
   const [pokemon, setPokemon] = useState()
+  const [erro, setErro] = useState("")
 
-  const handleSubmit = event => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    onSearchHandle(inputValue, setPokemon)
+    try {
+      const result = await getPokemonData(inputValue)
+      return setPokemon(result)
+    } catch {
+      setPokemon("")
+      setErro("Pokemon não encontrado")
+    }
   }
-
+  // console.log(pokemon)
   return (
     <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
@@ -24,7 +31,8 @@ export const Form = () => {
         <button>Enviar</button>
       </form>
       {pokemon
-        && <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'}/>
+        ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'}/>
+        : erro
       }
     </S.Bg>
   )
