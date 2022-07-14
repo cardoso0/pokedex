@@ -8,18 +8,17 @@ export const Form = () => {
 
   const [inputValue, setInputValue] = useState("")
   const [pokemon, setPokemon] = useState()
-  const [erro, setErro] = useState("")
+  const [isError, setIsError] = useState(false)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
       const result = await searchPokemon(inputValue)
       setPokemon(result)
+      setIsError(false)
     } catch {
       setPokemon("")
-      setErro(
-        <img src={qualPokemon} alt='Quem é esse Pokemon?'/>
-      )
+      setIsError(true)
     }
   }
 
@@ -33,9 +32,9 @@ export const Form = () => {
         />
         <button>Enviar</button>
       </form>
-      {pokemon
+      {pokemon && !isError
         ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'}/>
-        : <S.Erro>{erro}</S.Erro>
+        : <S.Error><img src={qualPokemon} alt='Quem é esse Pokemon?'/></S.Error>
       }
     </S.Bg>
   )

@@ -21,7 +21,7 @@ export const Bg = styled.div`
     }
   }
 `
-export const Erro = styled.div`
+export const Error = styled.div`
   text-align: center;
   margin-top: 1.5rem;
   display: flex;
