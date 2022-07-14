@@ -7,6 +7,6 @@ export const searchPokemon = async (pokemon) => {
     return data
 
   } catch (error) {
-    throw Error(console.log(error))
+    throw Error(error)
   }
 }
