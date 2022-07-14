@@ -14,7 +14,7 @@ export const Form = () => {
     event.preventDefault()
     try {
       const result = await searchPokemon(inputValue)
-      return setPokemon(result)
+      setPokemon(result)
     } catch {
       setPokemon("")
       setErro(
