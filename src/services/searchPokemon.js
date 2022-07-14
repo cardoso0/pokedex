@@ -1,6 +1,6 @@
 import api from "./api"
 
-export const getPokemonData = async (pokemon) => {
+export const searchPokemon = async (pokemon) => {
   try {
     const { data } = await
       api.get(`pokemon/${pokemon}/`)
