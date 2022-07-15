@@ -18,6 +18,7 @@ export const Form = () => {
       setIsSearched(true)
     } catch {
       setPokemon("")
+      setIsSearched(true)
     }
   }
   return (
