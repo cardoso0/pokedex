@@ -2,7 +2,7 @@ import * as S from './style'
 import { useState } from 'react'
 import { searchPokemon } from '../../services/searchPokemon'
 import { Pokemon } from '../Pokemon'
-import qualPokemon from '../../assets/qualPokemon.jpg'
+import qualPokemon from '../../assets/qualPokemon.png'
 
 export const Form = () => {
 
@@ -20,7 +20,6 @@ export const Form = () => {
       setPokemon("")
     }
   }
-  
   return (
     <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
