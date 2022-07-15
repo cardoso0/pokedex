@@ -24,4 +24,3 @@ export const getAllPokemons = async () => {
     throw Error(error)
   }
 }
-console.log(getAllPokemons())
