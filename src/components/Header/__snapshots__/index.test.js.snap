@@ -7,11 +7,16 @@ exports[`Header Component component rendering | snapshot 1`] = `
   <main
     className="sc-gsnTZi fPkEvo"
   >
-    <img
-      alt="logo pokedex"
-      className="logo"
-      src={Object {}}
-    />
+    <a
+      href="/pokedex/"
+      onClick={[Function]}
+    >
+      <img
+        alt="logo pokedex"
+        className="logo"
+        src={Object {}}
+      />
+    </a>
     <img
       alt="pokebola"
       className="pokebola"
