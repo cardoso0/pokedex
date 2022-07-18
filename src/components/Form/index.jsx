@@ -15,11 +15,10 @@ export const Form = () => {
     try {
       const result = await searchPokemon(inputValue)
       setPokemon(result)
-      setIsSearched(true)
     } catch {
       setPokemon("")
-      setIsSearched(true)
     }
+    setIsSearched(true)
   }
   return (
     <S.Bg id='busca'>
