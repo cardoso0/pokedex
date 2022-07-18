@@ -10,6 +10,7 @@ export const Home = () => {
 
   const [loading, setLoading] = useState(false)
   const [pokemons, setPokemons] = useState([])
+  const [error, setError] = useState(false)
 
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
 
@@ -19,10 +20,10 @@ export const Home = () => {
       const response = await
         getAllPokemons()
       setPokemons(response)
-      setLoading(false)
     } catch {
-      alert('Deu errado')
+      setError(true)
     }
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -42,6 +43,7 @@ export const Home = () => {
       <Header />
       <S.Bg>
         <Link to="/pokedex/searchpokemon"><div className="buscar">Buscar Pokemon</div></Link>
+        {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
           <S.Loading></S.Loading>
         ) : (
