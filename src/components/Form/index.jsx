@@ -2,7 +2,7 @@ import * as S from './style'
 import { useState } from 'react'
 import { searchPokemon } from '../../services/searchPokemon'
 import { Pokemon } from '../Pokemon'
-import qualPokemon from '../../assets/qualPokemon.png'
+import whosThatPokemon from '../../assets/whosThatPokemon.png'
 
 export const Form = () => {
 
@@ -34,7 +34,7 @@ export const Form = () => {
         <div>
           {pokemon
             ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'} />
-            : <S.Error><img src={qualPokemon} alt='Quem é esse Pokemon?' /></S.Error>
+            : <S.Error><img src={whosThatPokemon} alt='Quem é esse Pokemon?' /></S.Error>
           }
         </div>
       }
