@@ -20,6 +20,7 @@ export const Form = () => {
     }
     setIsSearched(true)
   }
+  
   return (
     <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
