@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pokemon Component component rendering | snapshot 1`] = `
+<div
+  className="sc-gsnTZi eRaBLT"
+>
+  <div
+    className="pokemonName"
+  >
+    Pikachu
+  </div>
+  <div
+    className="pokemonId"
+  >
+    #
+    1
+  </div>
+  <div
+    className="img"
+  >
+    <img
+      alt="Pikachu"
+    />
+  </div>
+  <div
+    className="pokemonType"
+  >
+    Electric
+  </div>
+</div>
+`;
