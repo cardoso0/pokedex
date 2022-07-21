@@ -1,12 +1,13 @@
 import { Footer, Form, Header } from '../../components'
+import { ContextProvider } from '../../contexts/Context'
 
 export const SearchPokemon = () => {
 
   return (
-    <div>
+    <ContextProvider>
       <Header />
       <Form />
       <Footer />
-    </div>
+    </ContextProvider>
   )
 }
