@@ -1,14 +1,13 @@
 import * as S from './style'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { searchPokemon } from '../../services/searchPokemon'
-import { Pokemon } from '../Pokemon'
-import whosThatPokemon from '../../assets/whosThatPokemon.png'
+import { Context } from '../../contexts/Context'
 
 export const Form = () => {
 
   const [inputValue, setInputValue] = useState("")
-  const [pokemon, setPokemon] = useState()
-  const [isSearched, setIsSearched] = useState(false)
+
+  const { setPokemon, setIsSearched } = useContext(Context)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -31,14 +30,6 @@ export const Form = () => {
         />
         <button>Enviar</button>
       </form>
-      {isSearched &&
-        <div>
-          {pokemon
-            ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'} />
-            : <S.Error><img src={whosThatPokemon} alt='Quem é esse Pokemon?' /></S.Error>
-          }
-        </div>
-      }
     </S.Bg>
   )
 }
