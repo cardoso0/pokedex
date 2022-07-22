@@ -1,3 +1,4 @@
+import * as S from './style'
 import { Error } from '../../components/Form/style'
 import { useContext } from 'react'
 import { Footer, Form, Header, Pokemon } from '../../components'
@@ -11,15 +12,17 @@ export const SearchPokemon = () => {
   return (
     <div>
       <Header />
-      {isSearched &&
-        <div>
-          {pokemon
-            ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'} />
-            : <Error><img src={whosThatPokemon} alt='Quem é esse Pokemon?' /></Error>
-          }
-        </div>
-      }
-      <Form />
+      <S.Height>
+        <Form />
+        {isSearched &&
+          <div>
+            {pokemon
+              ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'} />
+              : <Error><img src={whosThatPokemon} alt='Quem é esse Pokemon?' /></Error>
+            }
+          </div>
+        }
+      </S.Height>
       <Footer />
     </div>
   )
