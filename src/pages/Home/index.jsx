@@ -45,7 +45,7 @@ export const Home = () => {
         <Link to="/pokedex/searchpokemon"><div className="buscar">Buscar Pokemon</div></Link>
         {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
-          <S.Loading></S.Loading>
+          <S.Loading />
         ) : (
           <S.Container>
             <div className='pokemons'>{displayPokemons}</div>
