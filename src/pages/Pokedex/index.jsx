@@ -1,6 +1,5 @@
 import * as S from './style'
 import ReactPaginate from 'react-paginate'
-import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { Footer, Form, Header, Pokemon } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
@@ -42,7 +41,6 @@ export const Pokedex = () => {
     <div>
       <Header />
       <S.Bg>
-        {/* <Link to="/pokedex/searchpokemon"><div className="buscar">Buscar Pokemon</div></Link> */}
         <Form />
         {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
