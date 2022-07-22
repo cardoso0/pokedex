@@ -1,13 +1,9 @@
-import { useContext } from 'react'
-import { Context } from '../../contexts/Context'
 import { firstLetterUpperCase, firstLetterUpperCaseType } from '../../shared/firstLetterUpperCase'
 import * as S from './style'
 
 export const Pokemon = props => {
-  
-  const { pokemon } = useContext(Context)
 
-  const { large, medium } = props
+  const { pokemon, large, medium } = props
   const { id, name, sprites } = pokemon
 
   const pokemonType = pokemon.types[0].type.name
