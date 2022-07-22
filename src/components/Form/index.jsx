@@ -1,12 +1,13 @@
 import * as S from './style'
 import { useContext, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { searchPokemon } from '../../services/searchPokemon'
 import { Context } from '../../contexts/Context'
 
 export const Form = () => {
 
+  const navigate = useNavigate()
   const [inputValue, setInputValue] = useState("")
-
   const { setPokemon, setIsSearched } = useContext(Context)
 
   const handleSubmit = async (event) => {
@@ -17,6 +18,7 @@ export const Form = () => {
     } catch {
       setPokemon("")
     }
+    navigate("/pokedex/searchpokemon")
     setIsSearched(true)
   }
    
