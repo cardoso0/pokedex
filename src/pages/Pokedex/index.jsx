@@ -6,7 +6,7 @@ import { Footer, Header, Pokemon } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
 
-export const Home = () => {
+export const Pokedex = () => {
 
   const [loading, setLoading] = useState(false)
   const [pokemons, setPokemons] = useState([])
