@@ -4,7 +4,10 @@ import * as S from './style'
 export const Pokemon = props => {
 
   const { pokemon, large, medium } = props
-  const { id, name, sprites } = pokemon
+  const { id, name } = pokemon
+
+  const sprite = 
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
 
   const pokemonType = pokemon.types[0].type.name
   return (
@@ -12,7 +15,7 @@ export const Pokemon = props => {
       <div className='pokemonName'>{firstLetterUpperCase(pokemon)}</div>
       <div className='pokemonId'>#{id}</div>
       <div className='img'>
-        <img src={sprites.front_default} alt={name} />
+        <img src={sprite} alt={name} />
       </div>
       <div className='pokemonType'>{firstLetterUpperCaseType(pokemon)}</div>
     </S.Pokemon>
