@@ -4,7 +4,6 @@ export const Bg = styled.div`
   max-width: 90%;
   margin: 0 auto;
   padding-bottom: 2rem;
-  min-height: 100vh;
   
   form {
     display: flex;
