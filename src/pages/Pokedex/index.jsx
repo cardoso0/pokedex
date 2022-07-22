@@ -2,7 +2,7 @@ import * as S from './style'
 import ReactPaginate from 'react-paginate'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { Footer, Header, Pokemon } from '../../components'
+import { Footer, Form, Header, Pokemon } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
 
@@ -42,7 +42,8 @@ export const Pokedex = () => {
     <div>
       <Header />
       <S.Bg>
-        <Link to="/pokedex/searchpokemon"><div className="buscar">Buscar Pokemon</div></Link>
+        {/* <Link to="/pokedex/searchpokemon"><div className="buscar">Buscar Pokemon</div></Link> */}
+        <Form />
         {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
           <S.Loading />
