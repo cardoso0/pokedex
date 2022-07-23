@@ -7,7 +7,8 @@ export const Pokemon = props => {
   const { id, name } = pokemon
 
   const sprite = 
-    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+    `https://cdn.traction.one/pokedex/pokemon/${id}.png`
+    // `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
 
   const pokemonType = pokemon.types[0].type.name
   return (
