@@ -41,7 +41,7 @@ export const Pokedex = () => {
     <div>
       <Header />
       <S.Bg>
-        <Form />
+        <Form placeholder={'Digite um Pokemon'}/>
         {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
           <S.Loading />

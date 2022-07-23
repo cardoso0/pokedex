@@ -13,7 +13,7 @@ export const SearchPokemon = () => {
     <div>
       <Header />
       <S.Height>
-        <Form />
+        <Form placeholder={'Digite um Pokemon'} />
         {isSearched &&
           <div>
             {pokemon
