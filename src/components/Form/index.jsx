@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import { searchPokemon } from '../../services/searchPokemon'
 import { Context } from '../../contexts/Context'
 
-export const Form = () => {
+export const Form = props => {
+
+  const { placeholder } = props
 
   const navigate = useNavigate()
   const [inputValue, setInputValue] = useState("")
@@ -27,7 +29,7 @@ export const Form = () => {
       <form action="submit" onSubmit={handleSubmit}>
         <input type="text"
           autoFocus="on"
-          placeholder='Digite um Pokemon'
+          placeholder={placeholder}
           onChange={(e) => setInputValue(e.target.value.toLowerCase())}
         />
         <button>Enviar</button>
