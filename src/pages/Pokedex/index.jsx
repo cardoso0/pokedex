@@ -40,8 +40,8 @@ export const Pokedex = () => {
     navigate("/pokedex/searchpokemon")
   }
 
-  const displayPokemons = pokemons
-    .slice(pagesVisited, pagesVisited + itensPerPage)
+  const displayPokemons = param => {
+    return param.slice(pagesVisited, pagesVisited + itensPerPage)
     .map((pokemon) => {
       return (
         <Pokemon
@@ -51,6 +51,7 @@ export const Pokedex = () => {
         />
       )
     })
+  }
 
   return (
     <div>
@@ -62,7 +63,7 @@ export const Pokedex = () => {
           <S.Loading />
         ) : (
           <S.Container>
-            <div className='pokemons'>{displayPokemons}</div>
+            <div className='pokemons'>{displayPokemons(pokemons)}</div>
             <ReactPaginate
               previousLabel={"<"}
               nextLabel={">"}
