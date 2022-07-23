@@ -1,16 +1,21 @@
 import * as S from './style'
 import ReactPaginate from 'react-paginate'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Footer, Form, Header, Pokemon } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
+import { Context } from '../../contexts/Context'
 
 export const Pokedex = () => {
+
+  const navigate = useNavigate()
 
   const [loading, setLoading] = useState(false)
   const [pokemons, setPokemons] = useState([])
   const [error, setError] = useState(false)
 
+  const { setPokemon, setIsSearched } = useContext(Context)
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
 
   const fetchData = async () => {
@@ -29,11 +34,21 @@ export const Pokedex = () => {
     fetchData()
   }, [])
 
+  const handlePokemon = (pokemon) => {
+    setPokemon(pokemon)
+    setIsSearched(true)
+    navigate("/pokedex/searchpokemon")
+  }
+
   const displayPokemons = pokemons
     .slice(pagesVisited, pagesVisited + itensPerPage)
     .map((pokemon) => {
       return (
-        <Pokemon pokemon={pokemon} key={pokemon.id} />
+        <Pokemon
+          pokemon={pokemon}
+          key={pokemon.id}
+          handlePokemon={() => handlePokemon(pokemon)}
+        />
       )
     })
 
@@ -41,7 +56,7 @@ export const Pokedex = () => {
     <div>
       <Header />
       <S.Bg>
-        <Form placeholder={'Digite um Pokemon'}/>
+        <Form placeholder={'Digite um Pokemon'} />
         {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
           <S.Loading />
