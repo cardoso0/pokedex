@@ -15,7 +15,7 @@ export const Pokedex = () => {
   const [pokemons, setPokemons] = useState([])
   const [error, setError] = useState(false)
 
-  const { setPokemon, setIsSearched } = useContext(Context)
+  const { setPokemon, setIsSearched, pokemonSaved, setPokemonSaved } = useContext(Context)
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
 
   const fetchData = async () => {
@@ -24,6 +24,7 @@ export const Pokedex = () => {
       const response = await
         getAllPokemons()
       setPokemons(response)
+      setPokemonSaved(response)
     } catch {
       setError(true)
     }
@@ -31,7 +32,8 @@ export const Pokedex = () => {
   }
 
   useEffect(() => {
-    fetchData()
+    if (!pokemonSaved)
+      fetchData()
   }, [])
 
   const handlePokemon = (pokemon) => {
@@ -53,6 +55,11 @@ export const Pokedex = () => {
     })
   }
 
+  const verifyPokemon = 
+    pokemonSaved
+      ? <div className='pokemons'>{displayPokemons(pokemonSaved)}</div>
+      : <div className='pokemons'>{displayPokemons(pokemons)}</div>
+
   return (
     <div>
       <Header />
@@ -63,7 +70,7 @@ export const Pokedex = () => {
           <S.Loading />
         ) : (
           <S.Container>
-            <div className='pokemons'>{displayPokemons(pokemons)}</div>
+            {verifyPokemon}
             <ReactPaginate
               previousLabel={"<"}
               nextLabel={">"}
