@@ -2,14 +2,10 @@
 
 exports[`FooterComponent component rendering 1`] = `
 <footer
-  className="sc-bczRLJ xgqim"
+  className="sc-bczRLJ lohbCs"
 >
-  <main
-    className="sc-gsnTZi VpOde"
-  >
-    <p>
-      Desenvolvido por Felipe Cardoso
-    </p>
-  </main>
+  <p>
+    Desenvolvido por Felipe Cardoso
+  </p>
 </footer>
 `;

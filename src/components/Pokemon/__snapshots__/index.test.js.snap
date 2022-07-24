@@ -20,6 +20,7 @@ exports[`Pokemon Component component rendering | snapshot 1`] = `
   >
     <img
       alt="Pikachu"
+      src="https://cdn.traction.one/pokedex/pokemon/1.png"
     />
   </div>
   <div
