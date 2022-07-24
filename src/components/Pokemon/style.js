@@ -13,6 +13,7 @@ export const Pokemon = styled.div`
   background-color: ${prop => colors[prop.pokemonType]};
   text-align: center;
   font-weight: bold;
+  cursor: pointer;
 
   .pokemonName {
     padding: 0.5em 0 0.5em 0;

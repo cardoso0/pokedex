@@ -17,6 +17,7 @@ export const Bg = styled.div`
       font-weight: bold;
       background-color: #fff;
       border: 1px solid #918c8c;
+      cursor: pointer;
     }
   }
 `
