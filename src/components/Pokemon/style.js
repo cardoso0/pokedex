@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../shared/colorsBgPokemons";
 
-export const Bg = styled.div`
-
-`
-
 export const Pokemon = styled.div`
   width: 80%;
   margin: 1.5rem auto;
@@ -14,6 +10,11 @@ export const Pokemon = styled.div`
   text-align: center;
   font-weight: bold;
   cursor: pointer;
+  
+  .pokemonId {
+    margin: auto 0;
+    padding: 0.5em;
+  }
 
   .pokemonName {
     padding: 0.5em 0 0.5em 0;
@@ -31,5 +32,15 @@ export const Pokemon = styled.div`
   
   @media (min-width: 1024px) {
     width: ${prop => prop.large}
+  }
+`
+
+export const BgName = styled.div`
+  display: flex;
+  justify-content: space-around;
+
+  .heart {
+    margin: auto 0;
+    padding: 0.5em;
   }
 `
