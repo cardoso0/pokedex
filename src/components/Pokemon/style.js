@@ -9,7 +9,6 @@ export const Pokemon = styled.div`
   background-color: ${prop => colors[prop.pokemonType]};
   text-align: center;
   font-weight: bold;
-  cursor: pointer;
   
   .pokemonId {
     margin: auto 0;
@@ -24,6 +23,7 @@ export const Pokemon = styled.div`
   }
   img {
     width: 70%;
+    cursor: pointer;
   }
 
   @media (min-width: 768px) {
@@ -42,5 +42,6 @@ export const BgName = styled.div`
   .heart {
     margin: auto 0;
     padding: 0.5em;
+    cursor: pointer;
   }
 `
