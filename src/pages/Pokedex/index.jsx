@@ -14,6 +14,8 @@ export const Pokedex = () => {
   const [loading, setLoading] = useState(false)
   const [pokemons, setPokemons] = useState([])
   const [error, setError] = useState(false)
+  const [favorites, setFavorites] = useState([])
+  const [fav, setFav] = useState([])
 
   const { setPokemon, setIsSearched, pokemonSaved, setPokemonSaved } = useContext(Context)
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
@@ -42,20 +44,50 @@ export const Pokedex = () => {
     navigate("/pokedex/searchpokemon")
   }
 
-  const displayPokemons = param => {
-    return param.slice(pagesVisited, pagesVisited + itensPerPage)
-    .map((pokemon) => {
-      return (
-        <Pokemon
-          pokemon={pokemon}
-          key={pokemon.id}
-          handlePokemon={() => handlePokemon(pokemon)}
-        />
-      )
-    })
+  const handleFavorite = (param) => {
+    const updateFavorites = [...fav]
+    const str = JSON.stringify(param)
+    const favorite = fav.map(item => item.name)
+    favorite.includes(param.name)
+      ? alert('Já existe')//localStorage.removeItem('bulbasaur')
+      : updateFavorites.push(param)
+    console.log(str)
+    // console.log(param.name)
+    // updateFavorites.push(param.name)
+    localStorage.setItem('favorite', JSON.stringify(updateFavorites))
+    setFavorites(updateFavorites)
+  }
+  const verifyFavorite = (param) => {
+    const favorite = fav.map(item => item.name)
+    return favorite.includes(param.name) ? '❤️' : '🤍'
   }
 
-  const verifyPokemon = 
+  const fetchLocal = () => {
+    let localFavStr = localStorage.getItem('favorite')
+    let localFavObj = JSON.parse(localFavStr) || []
+    setFav(localFavObj)
+  }
+
+  useEffect(() => {
+    fetchLocal()
+  }, [favorites])
+
+  const displayPokemons = param => {
+    return param.slice(pagesVisited, pagesVisited + itensPerPage)
+      .map((pokemon) => {
+        return (
+          <Pokemon
+            pokemon={pokemon}
+            key={pokemon.id}
+            handlePokemon={() => handlePokemon(pokemon)}
+            handleFavorite={() => handleFavorite(pokemon)}
+            heart={verifyFavorite(pokemon)}
+          />
+        )
+      })
+  }
+
+  const verifyPokemon =
     pokemonSaved
       ? <div className='pokemons'>{displayPokemons(pokemonSaved)}</div>
       : <div className='pokemons'>{displayPokemons(pokemons)}</div>
