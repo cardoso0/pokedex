@@ -15,7 +15,6 @@ export const Pokedex = () => {
   const [pokemons, setPokemons] = useState([])
   const [error, setError] = useState(false)
   const [favorites, setFavorites] = useState([])
-  const [fav, setFav] = useState([])
 
   const { setPokemon, setIsSearched, pokemonSaved, setPokemonSaved } = useContext(Context)
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
@@ -32,11 +31,21 @@ export const Pokedex = () => {
     }
     setLoading(false)
   }
+  const favoritesKey = "favorites"
+  const loadFavoritePokemons = () => {
+    const pokemon = JSON.parse(localStorage.getItem(favoritesKey)) || []
+    setFavorites(pokemon)
+  }
+
+  useEffect(() => {
+    loadFavoritePokemons()
+  }, [loading])
 
   useEffect(() => {
     if (!pokemonSaved)
       fetchData()
   }, [])
+
 
   const handlePokemon = (pokemon) => {
     setPokemon(pokemon)
@@ -45,33 +54,25 @@ export const Pokedex = () => {
   }
 
   const handleFavorite = (param) => {
-    const updateFavorites = [...fav]
-    const favorite = fav.map(item => item.name)
-    const favInclude = favorite.includes(param.name)
-    if (fav.length >= 6 && !favInclude) {
+    let updatedFavorites = [...favorites]
+    const favorite = favorites.map(item => item.name)
+    const favoriteInclude = favorite.includes(param.name)
+
+    if (favorites.length >= 6 && !favoriteInclude) {
       alert('Você excedeu o limite de Pokemons')
     } else {
-      favInclude
-        ? alert('Já existe')
-        : updateFavorites.push(param)
+      favoriteInclude
+        ? updatedFavorites = updatedFavorites.filter(item => item.name !== param.name)
+        : updatedFavorites.push(param)
     }
-    localStorage.setItem('favorite', JSON.stringify(updateFavorites))
-    setFavorites(updateFavorites)
+    localStorage.setItem(favoritesKey, JSON.stringify(updatedFavorites))
+    setFavorites(updatedFavorites)
   }
+
   const verifyFavorite = (param) => {
-    const favorite = fav.map(item => item.name)
+    const favorite = favorites.map(item => item.name)
     return favorite.includes(param.name) ? '❤️' : '🤍'
   }
-
-  const fetchLocal = () => {
-    let localFavStr = localStorage.getItem('favorite')
-    let localFavObj = JSON.parse(localFavStr) || []
-    setFav(localFavObj)
-  }
-
-  useEffect(() => {
-    fetchLocal()
-  }, [favorites])
 
   const displayPokemons = param => {
     return param.slice(pagesVisited, pagesVisited + itensPerPage)
