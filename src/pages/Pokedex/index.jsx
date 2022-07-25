@@ -46,14 +46,15 @@ export const Pokedex = () => {
 
   const handleFavorite = (param) => {
     const updateFavorites = [...fav]
-    const str = JSON.stringify(param)
     const favorite = fav.map(item => item.name)
-    favorite.includes(param.name)
-      ? alert('Já existe')//localStorage.removeItem('bulbasaur')
-      : updateFavorites.push(param)
-    console.log(str)
-    // console.log(param.name)
-    // updateFavorites.push(param.name)
+    const favInclude = favorite.includes(param.name)
+    if (fav.length >= 6 && !favInclude) {
+      alert('Você excedeu o limite de Pokemons')
+    } else {
+      favInclude
+        ? alert('Já existe')
+        : updateFavorites.push(param)
+    }
     localStorage.setItem('favorite', JSON.stringify(updateFavorites))
     setFavorites(updateFavorites)
   }
