@@ -6,6 +6,7 @@ import { Footer, Form, Header, Pokemon } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
 import { Context } from '../../contexts/Context'
+import { verifyFavorite } from '../../shared/verifyFavorite'
 
 export const Pokedex = () => {
 
@@ -14,9 +15,8 @@ export const Pokedex = () => {
   const [loading, setLoading] = useState(false)
   const [pokemons, setPokemons] = useState([])
   const [error, setError] = useState(false)
-  const [favorites, setFavorites] = useState([])
 
-  const { setPokemon, setIsSearched, pokemonSaved, setPokemonSaved } = useContext(Context)
+  const { setPokemon, setIsSearched, pokemonSaved, setPokemonSaved, favorites, setFavorites } = useContext(Context)
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
 
   const fetchData = async () => {
@@ -69,11 +69,6 @@ export const Pokedex = () => {
     setFavorites(updatedFavorites)
   }
 
-  const verifyFavorite = (param) => {
-    const favorite = favorites.map(item => item.name)
-    return favorite.includes(param.name) ? '❤️' : '🤍'
-  }
-
   const displayPokemons = param => {
     return param.slice(pagesVisited, pagesVisited + itensPerPage)
       .map((pokemon) => {
@@ -83,7 +78,7 @@ export const Pokedex = () => {
             key={pokemon.id}
             handlePokemon={() => handlePokemon(pokemon)}
             handleFavorite={() => handleFavorite(pokemon)}
-            heart={verifyFavorite(pokemon)}
+            heart={verifyFavorite(pokemon, favorites)}
           />
         )
       })
