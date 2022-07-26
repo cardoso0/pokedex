@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { ContextProvider } from '../contexts/Context'
-import { Pokedex, SearchPokemon } from '../pages'
+import { Favorites, Pokedex, SearchPokemon } from '../pages'
 
 export const MainRoutes = () => {
   return (
@@ -8,6 +8,7 @@ export const MainRoutes = () => {
       <Routes>
         <Route path='/pokedex/' element={<Pokedex />} />
         <Route path='/pokedex/searchpokemon' element={<SearchPokemon />} />
+        <Route path='/pokedex/favorites' element={<Favorites />} />
       </Routes>
     </ContextProvider>
   )
