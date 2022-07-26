@@ -4,10 +4,11 @@ import { useContext } from 'react'
 import { Footer, Form, Header, Pokemon } from '../../components'
 import { Context } from '../../contexts/Context'
 import whosThatPokemon from '../../assets/whosThatPokemon.png'
+import { verifyFavorite } from '../../shared/verifyFavorite'
 
 export const SearchPokemon = () => {
 
-  const { pokemon, isSearched } = useContext(Context)
+  const { pokemon, isSearched, favorites } = useContext(Context)
 
   return (
     <div>
@@ -17,7 +18,7 @@ export const SearchPokemon = () => {
         {isSearched &&
           <div>
             {pokemon
-              ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'} />
+              ? <Pokemon pokemon={pokemon} large={'20%'} medium={'25%'} heart={verifyFavorite(pokemon, favorites)} />
               : <Error><img src={whosThatPokemon} alt='Quem é esse Pokemon?' /></Error>
             }
           </div>
