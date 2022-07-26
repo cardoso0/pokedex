@@ -11,7 +11,9 @@ export const Header = () => {
         <Link to='/pokedex/' >
           <img className="logo" src={pokedex} alt="logo pokedex" />
         </Link>
-        <img className="pokebola" src={pokebola} alt="pokebola" />
+        <Link to='/pokedex/favorites'>
+          <img className="pokebola" src={pokebola} alt="pokebola" />
+        </Link>
       </S.Main>
     </S.Bg>
   )
