@@ -1,8 +1,8 @@
 import * as S from './style'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { Footer, Header, Pokemon } from '../../components'
 import { Context } from '../../contexts/Context'
-import { verifyFavorite } from '../../shared/verifyFavorite'
+import { verifyFavorite, loadFavoritePokemons } from '../../shared'
 
 export const Favorites = () => {
 
@@ -12,7 +12,7 @@ export const Favorites = () => {
     let updatedFavorites = [...favorites]
     const favorite = favorites.map(item => item.name)
     const favoriteInclude = favorite.includes(pokemon.name)
-  
+
     if (favoriteInclude) {
       updatedFavorites = updatedFavorites.filter(item => item.name !== pokemon.name)
     }
@@ -20,6 +20,10 @@ export const Favorites = () => {
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites))
     setFavorites(updatedFavorites)
   }
+
+  useEffect(() => {
+    loadFavoritePokemons(setFavorites)
+  },[])
 
   return (
     <div>
