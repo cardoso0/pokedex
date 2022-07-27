@@ -7,6 +7,7 @@ import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
 import { Context } from '../../contexts/Context'
 import { verifyFavorite } from '../../shared/verifyFavorite'
+import { handleFavorite } from '../../shared/handleFavorite'
 
 export const Pokedex = () => {
 
@@ -53,22 +54,6 @@ export const Pokedex = () => {
     navigate("/pokedex/searchpokemon")
   }
 
-  const handleFavorite = (param) => {
-    let updatedFavorites = [...favorites]
-    const favorite = favorites.map(item => item.name)
-    const favoriteInclude = favorite.includes(param.name)
-
-    if (favorites.length >= 6 && !favoriteInclude) {
-      alert('Você excedeu o limite de Pokemons')
-    } else {
-      favoriteInclude
-        ? updatedFavorites = updatedFavorites.filter(item => item.name !== param.name)
-        : updatedFavorites.push(param)
-    }
-    localStorage.setItem(favoritesKey, JSON.stringify(updatedFavorites))
-    setFavorites(updatedFavorites)
-  }
-
   const displayPokemons = param => {
     return param.slice(pagesVisited, pagesVisited + itensPerPage)
       .map((pokemon) => {
@@ -77,7 +62,7 @@ export const Pokedex = () => {
             pokemon={pokemon}
             key={pokemon.id}
             handlePokemon={() => handlePokemon(pokemon)}
-            handleFavorite={() => handleFavorite(pokemon)}
+            handleFavorite={() => handleFavorite(pokemon, favorites ,setFavorites)}
             heart={verifyFavorite(pokemon, favorites)}
           />
         )
