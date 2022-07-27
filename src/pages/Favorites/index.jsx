@@ -6,8 +6,21 @@ import { verifyFavorite } from '../../shared/verifyFavorite'
 
 export const Favorites = () => {
 
-  const { favorites } = useContext(Context)
-  console.log(favorites)
+  const { favorites, setFavorites } = useContext(Context)
+
+  const removeFavorite = (pokemon) => {
+    let updatedFavorites = [...favorites]
+    const favorite = favorites.map(item => item.name)
+    const favoriteInclude = favorite.includes(pokemon.name)
+  
+    if (favoriteInclude) {
+      updatedFavorites = updatedFavorites.filter(item => item.name !== pokemon.name)
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites))
+    setFavorites(updatedFavorites)
+  }
+
   return (
     <div>
       <Header />
@@ -18,6 +31,7 @@ export const Favorites = () => {
               <Pokemon
                 pokemon={pokemon}
                 key={pokemon.id}
+                handleFavorite={() => removeFavorite(pokemon)}
                 heart={verifyFavorite(pokemon, favorites)}
               />)
           })}
