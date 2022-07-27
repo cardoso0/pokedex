@@ -6,8 +6,7 @@ import { Footer, Form, Header, Pokemon } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
 import { Context } from '../../contexts/Context'
-import { verifyFavorite } from '../../shared/verifyFavorite'
-import { handleFavorite } from '../../shared/handleFavorite'
+import { verifyFavorite, handleFavorite, loadFavoritePokemons, navigateToSearchPokemon } from '../../shared'
 
 export const Pokedex = () => {
 
@@ -32,27 +31,15 @@ export const Pokedex = () => {
     }
     setLoading(false)
   }
-  const favoritesKey = "favorites"
-  const loadFavoritePokemons = () => {
-    const pokemon = JSON.parse(localStorage.getItem(favoritesKey)) || []
-    setFavorites(pokemon)
-  }
 
   useEffect(() => {
-    loadFavoritePokemons()
-  }, [loading])
+    loadFavoritePokemons(setFavorites)
+  }, [])
 
   useEffect(() => {
     if (!pokemonSaved)
       fetchData()
   }, [])
-
-
-  const handlePokemon = (pokemon) => {
-    setPokemon(pokemon)
-    setIsSearched(true)
-    navigate("/pokedex/searchpokemon")
-  }
 
   const displayPokemons = param => {
     return param.slice(pagesVisited, pagesVisited + itensPerPage)
@@ -61,7 +48,7 @@ export const Pokedex = () => {
           <Pokemon
             pokemon={pokemon}
             key={pokemon.id}
-            handlePokemon={() => handlePokemon(pokemon)}
+            handlePokemon={() => navigateToSearchPokemon(pokemon, setPokemon, setIsSearched, navigate)}
             handleFavorite={() => handleFavorite(pokemon, favorites ,setFavorites)}
             heart={verifyFavorite(pokemon, favorites)}
           />
@@ -69,7 +56,7 @@ export const Pokedex = () => {
       })
   }
 
-  const verifyPokemon =
+  const verifyPokemonItIsSaved =
     pokemonSaved
       ? <div className='pokemons'>{displayPokemons(pokemonSaved)}</div>
       : <div className='pokemons'>{displayPokemons(pokemons)}</div>
@@ -84,7 +71,7 @@ export const Pokedex = () => {
           <S.Loading />
         ) : (
           <S.Container>
-            {verifyPokemon}
+            {verifyPokemonItIsSaved}
             <ReactPaginate
               previousLabel={"<"}
               nextLabel={">"}
