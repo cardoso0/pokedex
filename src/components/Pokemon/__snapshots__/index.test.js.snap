@@ -2,18 +2,25 @@
 
 exports[`Pokemon Component component rendering | snapshot 1`] = `
 <div
-  className="sc-gsnTZi jaKMxp"
+  className="sc-bczRLJ jbmRuO"
 >
   <div
-    className="pokemonName"
+    className="sc-gsnTZi eXcMNu"
   >
-    Pikachu
-  </div>
-  <div
-    className="pokemonId"
-  >
-    #
-    1
+    <div
+      className="pokemonId"
+    >
+      #
+      1
+    </div>
+    <div
+      className="pokemonName"
+    >
+      Pikachu
+    </div>
+    <div
+      className="heart"
+    />
   </div>
   <div
     className="img"

@@ -17,11 +17,16 @@ exports[`Header Component component rendering | snapshot 1`] = `
         src={Object {}}
       />
     </a>
-    <img
-      alt="pokebola"
-      className="pokebola"
-      src={Object {}}
-    />
+    <a
+      href="/pokedex/favorites"
+      onClick={[Function]}
+    >
+      <img
+        alt="pokebola"
+        className="pokebola"
+        src={Object {}}
+      />
+    </a>
   </main>
 </div>
 `;
