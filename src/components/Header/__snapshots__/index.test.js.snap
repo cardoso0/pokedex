@@ -4,7 +4,7 @@ exports[`Header Component component rendering | snapshot 1`] = `
 <div
   className="sc-bczRLJ xgqim"
 >
-  <main
+  <header
     className="sc-gsnTZi bPHHs"
   >
     <a
@@ -27,6 +27,6 @@ exports[`Header Component component rendering | snapshot 1`] = `
         src={Object {}}
       />
     </a>
-  </main>
+  </header>
 </div>
 `;
