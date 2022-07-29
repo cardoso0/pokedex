@@ -3,7 +3,7 @@ import { firstLetterUpperCase } from "./firstLetterUpperCase";
 import { handleFavorite } from "./handleFavorite"
 import { verifyFavorite } from "./verifyFavorite"
 import { loadFavoritePokemons } from "./loadFavoritePokemons"
-import { navigateToSearchPokemon } from "./navigateToSearchPokemon"
+import { navigateToDetailsPokemon } from "./navigateToDetailsPokemon"
 
 export {
   colors,
@@ -11,5 +11,5 @@ export {
   handleFavorite,
   verifyFavorite,
   loadFavoritePokemons,
-  navigateToSearchPokemon
+  navigateToDetailsPokemon
 }

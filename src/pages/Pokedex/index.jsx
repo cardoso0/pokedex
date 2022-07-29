@@ -6,7 +6,7 @@ import { Footer, Form, Header, Pokemon } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
 import { Context } from '../../contexts/Context'
-import { verifyFavorite, handleFavorite, loadFavoritePokemons, navigateToSearchPokemon } from '../../shared'
+import { verifyFavorite, handleFavorite, loadFavoritePokemons, navigateToDetailsPokemon } from '../../shared'
 import { Title } from '../../components/Title'
 
 export const Pokedex = () => {
@@ -49,7 +49,7 @@ export const Pokedex = () => {
           <Pokemon
             pokemon={pokemon}
             key={pokemon.id}
-            handlePokemon={() => navigateToSearchPokemon(pokemon, setPokemon, setIsSearched, navigate)}
+            handlePokemon={() => navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate)}
             handleFavorite={() => handleFavorite(pokemon, favorites, setFavorites)}
             heart={verifyFavorite(pokemon, favorites)}
           />

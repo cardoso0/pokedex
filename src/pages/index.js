@@ -1,9 +1,9 @@
 import { Pokedex } from "./Pokedex";
-import { SearchPokemon } from "./SearchPokemon";
+import { DetailsPokemon } from "./DetailsPokemon";
 import { Favorites } from "./Favorites"
 
 export {
   Pokedex,
-  SearchPokemon,
+  DetailsPokemon,
   Favorites
 }

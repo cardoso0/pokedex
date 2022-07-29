@@ -2,7 +2,7 @@ import * as S from './style'
 import { useContext, useEffect } from 'react'
 import { Footer, Header, Pokemon } from '../../components'
 import { Context } from '../../contexts/Context'
-import { verifyFavorite, loadFavoritePokemons, navigateToSearchPokemon } from '../../shared'
+import { verifyFavorite, loadFavoritePokemons, navigateToDetailsPokemon } from '../../shared'
 import { useNavigate } from 'react-router-dom'
 
 export const Favorites = () => {
@@ -38,7 +38,7 @@ export const Favorites = () => {
               <Pokemon
                 pokemon={pokemon}
                 key={pokemon.id}
-                handlePokemon={() => navigateToSearchPokemon(pokemon, setPokemon, setIsSearched, navigate)}
+                handlePokemon={() => navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate)}
                 handleFavorite={() => removeFavorite(pokemon)}
                 heart={verifyFavorite(pokemon, favorites)}
               />)

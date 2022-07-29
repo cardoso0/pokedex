@@ -6,7 +6,7 @@ import { Context } from '../../contexts/Context'
 import whosThatPokemon from '../../assets/whosThatPokemon.png'
 import { handleFavorite, verifyFavorite } from '../../shared'
 
-export const SearchPokemon = () => {
+export const DetailsPokemon = () => {
 
   const { pokemon, isSearched, favorites, setFavorites } = useContext(Context)
   console.log(pokemon)
