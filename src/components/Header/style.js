@@ -7,7 +7,6 @@ export const Bg = styled.div`
 export const Header = styled.header`
   max-width: 90%;
   margin: 0 auto;
-  padding: 0.5em 0 0.5em 0;
 
   .pokebola {
     display: none;
@@ -18,9 +17,9 @@ export const Header = styled.header`
   }
 
   @media (min-width: 768px) {
-    max-width: 80%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     .pokebola {
       display: flex;
