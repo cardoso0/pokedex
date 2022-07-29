@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu Component component rendering | snapshot 1`] = `
+<nav
+  className="sc-bczRLJ gIEkxD"
+>
+  <a
+    href="/pokedex/"
+    onClick={[Function]}
+  >
+    Home
+  </a>
+  <a
+    href="/pokedex/favorites"
+    onClick={[Function]}
+  >
+    Favoritos
+  </a>
+</nav>
+`;
