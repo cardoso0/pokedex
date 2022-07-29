@@ -7,6 +7,7 @@ import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
 import { Context } from '../../contexts/Context'
 import { verifyFavorite, handleFavorite, loadFavoritePokemons, navigateToSearchPokemon } from '../../shared'
+import { Title } from '../../components/Title'
 
 export const Pokedex = () => {
 
@@ -49,7 +50,7 @@ export const Pokedex = () => {
             pokemon={pokemon}
             key={pokemon.id}
             handlePokemon={() => navigateToSearchPokemon(pokemon, setPokemon, setIsSearched, navigate)}
-            handleFavorite={() => handleFavorite(pokemon, favorites ,setFavorites)}
+            handleFavorite={() => handleFavorite(pokemon, favorites, setFavorites)}
             heart={verifyFavorite(pokemon, favorites)}
           />
         )
@@ -65,6 +66,10 @@ export const Pokedex = () => {
     <div>
       <Header />
       <S.Bg>
+        <Title 
+          title={'Está preparado para essa jornada?'}
+          subtitle={'Forme sua equipe pokémon!'}
+        />
         <Form placeholder={'Digite um Pokemon'} />
         {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
