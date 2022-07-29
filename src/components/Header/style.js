@@ -4,7 +4,7 @@ export const Bg = styled.div`
   background-color: #ff0400;
 `
 
-export const Main = styled.main`
+export const Header = styled.header`
   max-width: 90%;
   margin: 0 auto;
   padding: 0.5em 0 0.5em 0;

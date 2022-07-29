@@ -7,14 +7,14 @@ export const Header = () => {
 
   return (
     <S.Bg>
-      <S.Main>
+      <S.Header>
         <Link to='/pokedex/' >
           <img className="logo" src={pokedex} alt="logo pokedex" />
         </Link>
         <Link to='/pokedex/favorites'>
           <img className="pokebola" src={pokebola} alt="pokebola" />
         </Link>
-      </S.Main>
+      </S.Header>
     </S.Bg>
   )
 }
