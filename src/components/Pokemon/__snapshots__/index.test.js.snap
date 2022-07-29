@@ -35,5 +35,13 @@ exports[`Pokemon Component component rendering | snapshot 1`] = `
   >
     Electric
   </div>
+  <ul
+    className="sc-dkzDqf bJxurm"
+  >
+    <li />
+    <li />
+    <li />
+    <li />
+  </ul>
 </div>
 `;
