@@ -9,7 +9,7 @@ import { handleFavorite, verifyFavorite } from '../../shared'
 export const SearchPokemon = () => {
 
   const { pokemon, isSearched, favorites, setFavorites } = useContext(Context)
-
+  console.log(pokemon)
   return (
     <div>
       <Header />
@@ -18,13 +18,20 @@ export const SearchPokemon = () => {
         {isSearched &&
           <div>
             {pokemon
-              ? <Pokemon
+              ? <>
+              <Pokemon
                 pokemon={pokemon}
                 large={'20%'}
                 medium={'25%'}
                 handleFavorite={() => handleFavorite(pokemon, favorites ,setFavorites)}
                 heart={verifyFavorite(pokemon, favorites)}
+                
               />
+              <div>XP: {pokemon.base_experience}</div>
+              <div>Habilidade: {pokemon.abilities[0].ability.name}</div>
+              <div>Altura: {pokemon.height} m</div>
+              <div>Peso: {pokemon.weight} Kg</div>
+              </>
               : <Error><img src={whosThatPokemon} alt='Quem é esse Pokemon?' /></Error>
             }
           </div>
