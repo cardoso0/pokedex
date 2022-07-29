@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title Component component rendering | snapshot 1`] = `
+<section
+  className="sc-bczRLJ iBzcfE"
+>
+  <h1 />
+  <h2 />
+</section>
+`;
