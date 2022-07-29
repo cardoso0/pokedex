@@ -28,7 +28,6 @@ export const Form = props => {
     <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
         <input type="text"
-          autoFocus="on"
           placeholder={placeholder}
           onChange={(e) => setInputValue(e.target.value.toLowerCase())}
         />
