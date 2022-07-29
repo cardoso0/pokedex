@@ -13,7 +13,7 @@ export const getPokemons = async (limit, offset) => {
 
 export const getAllPokemons = async () => {
   try {
-    const { results } = await getPokemons(850, 0)
+    const { results } = await getPokemons(50, 0) //850
     const promises = results.map(async pokemon => {
       return axios.get(pokemon.url)
     })
