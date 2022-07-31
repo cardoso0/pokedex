@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-
+import { colors } from './colorsBgPokemons'
 import { firstLetterUpperCase, firstLetterUpperCaseType } from './firstLetterUpperCase'
 
 describe("firstLetterUpperCase", () => {
@@ -29,3 +29,14 @@ describe("firstLetterUpperCase", () => {
     expect(firstLetterUpperCaseType(pokemon)).toBe('Electric')
   })
 })
+
+describe("colors", () => {
+  it("colors should be a object", () => {
+    expect(colors).toBeInstanceOf(Object)
+  })
+
+  it("must return a string color", () => {
+    expect(colors).toBeTruthy()
+  })
+})
+
