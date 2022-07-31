@@ -2,12 +2,11 @@ import * as S from './style'
 import ReactPaginate from 'react-paginate'
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Footer, Form, Header, Pokemon } from '../../components'
+import { Footer, Form, Header, Pokemon, Title } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
 import { Context } from '../../contexts/Context'
 import { verifyFavorite, handleFavorite, loadFavoritePokemons, navigateToDetailsPokemon } from '../../shared'
-import { Title } from '../../components/Title'
 
 export const Pokedex = () => {
 
