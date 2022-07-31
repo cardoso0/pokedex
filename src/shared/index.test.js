@@ -2,6 +2,7 @@ import '@testing-library/jest-dom'
 import { colors } from './colorsBgPokemons'
 import { firstLetterUpperCase, firstLetterUpperCaseType } from './firstLetterUpperCase'
 import { handleFavorite } from './handleFavorite'
+import { loadFavoritePokemons } from './loadFavoritePokemons'
 
 describe("firstLetterUpperCase", () => {
   it("firstLetterUpperCase should be a function", () => {
@@ -46,12 +47,25 @@ describe("handleFavorite", () => {
     expect(handleFavorite).toBeInstanceOf(Function)
   })
 
-  it("must return a updatedFavorites", () => {
+  it('must return a updatedFavorites', () => {
     const pokemon = {
       name: 'Pikachu'
     }
     const favorites = []
-    const setState = () =>
-    expect(handleFavorite(pokemon, favorites, setState)).toBe()
+    const setState = jest.fn();
+    handleFavorite(pokemon, favorites, setState);
+    expect(setState).toHaveBeenCalled();
+  })
+})
+
+describe("loadFavoritePokemons", () => {
+  it("loadFavoritePokemons should be a function", () => {
+    expect(loadFavoritePokemons).toBeInstanceOf(Function)
+  })
+
+  it('must set value to state', () => {
+    const state = jest.fn()
+    loadFavoritePokemons(state)
+    expect(state).toHaveBeenCalled()
   })
 })
