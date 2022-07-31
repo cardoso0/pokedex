@@ -6,6 +6,7 @@ export const Height = styled.div`
   margin: 0 auto;
 `
 export const Pokemons = styled.div`
+  padding-top: 2rem;
   display: grid;
   margin-top: 2rem;
 
