@@ -12,7 +12,7 @@ export const Pokemon = props => {
 
   const pokemonType = pokemon.types[0].type.name
   return (
-    <S.Pokemon pokemonType={pokemonType} large={large} medium={medium} >
+    <S.Pokemon pokemonType={pokemonType} large={large} medium={medium} className={props.pkBg} >
       <S.BgName>
         <div className='pokemonId'>#{id}</div>
         <div className='pokemonName'>{firstLetterUpperCase(pokemon)}</div>
@@ -22,6 +22,12 @@ export const Pokemon = props => {
         <img src={sprite} alt={name} onClick={handlePokemon}/>
       </div>
       <div className='pokemonType'>{firstLetterUpperCaseType(pokemon)}</div>
+      <S.MoreDetails pokemonType={pokemonType}>
+        <li>{props.altura}</li>
+        <li>{props.peso}</li>
+        <li>{props.categoria}</li>
+        <li>{props.ability}</li>
+      </S.MoreDetails>
     </S.Pokemon>
   )
 }

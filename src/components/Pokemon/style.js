@@ -45,3 +45,8 @@ export const BgName = styled.div`
     cursor: pointer;
   }
 `
+export const MoreDetails = styled.ul`
+  // border: 5px solid ${prop => colors[prop.pokemonType]};
+  // border-radius: 10px;
+  // background: white;
+`
