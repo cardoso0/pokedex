@@ -7,7 +7,7 @@ export const MainRoutes = () => {
     <ContextProvider>
       <Routes>
         <Route path='/pokedex/' element={<Pokedex />} />
-        <Route path='/pokedex/searchpokemon' element={<DetailsPokemon />} />
+        <Route path='/pokedex/detailspokemon' element={<DetailsPokemon />} />
         <Route path='/pokedex/favorites' element={<Favorites />} />
       </Routes>
     </ContextProvider>
