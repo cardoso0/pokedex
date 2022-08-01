@@ -23,7 +23,7 @@ export const Form = props => {
     navigate("/pokedex/detailspokemon")
     setIsSearched(true)
   }
-   
+
   return (
     <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
@@ -31,7 +31,6 @@ export const Form = props => {
           placeholder={placeholder}
           onChange={(e) => setInputValue(e.target.value.toLowerCase())}
         />
-        <button>Enviar</button>
       </form>
     </S.Bg>
   )
