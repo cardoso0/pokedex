@@ -41,3 +41,26 @@ export const Details = styled.ul`
     font-weight: bold;
   }
 `
+
+export const Error = styled.div`
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 65%;
+    border-radius: 10px;
+    border: 1px solid #bfbfbf;
+  }
+
+  @media (min-width: 768px){
+    img {
+      width: 30%;
+    }
+  }
+
+  @media (min-width: 1024px){
+    img {
+      width: 18%;
+    }
+  }
+`
