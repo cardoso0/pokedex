@@ -1,5 +1,4 @@
 import * as S from './style'
-import { Error } from '../../components/Form/style'
 import { useContext } from 'react'
 import { Footer, Form, Header, Pokemon } from '../../components'
 import { Context } from '../../contexts/Context'
@@ -9,13 +8,13 @@ import { handleFavorite, verifyFavorite } from '../../shared'
 export const DetailsPokemon = () => {
 
   const { pokemon, isSearched, favorites, setFavorites } = useContext(Context)
+
   let move = []
-  pokemon.moves
-    .map(item => move.push(item.move.name))
+  if (pokemon) pokemon.moves
+  .map(item => move.push(item.move.name))
 
   const firstLetterUpperCase = (n) =>
     move[n][0].toUpperCase() + move[n].substring(1)
-  const pokemonType = pokemon.types[0].type.name
 
   return (
     <div>
@@ -26,7 +25,7 @@ export const DetailsPokemon = () => {
           <div>
             {pokemon
               ? <S.Card>
-                <S.Details pokemonType={pokemonType}>
+                <S.Details pokemonType={pokemon.types[0].type.name}>
                   <li><span>HP:</span> {pokemon.stats[0]['base_stat']}</li>
                   <li><span>Ataque:</span> {pokemon.stats[1]['base_stat']}</li>
                   <li><span>Velocidade:</span> {pokemon.stats[5]['base_stat']}</li>
@@ -43,7 +42,7 @@ export const DetailsPokemon = () => {
                   heart={verifyFavorite(pokemon, favorites)}
                 />
               </S.Card>
-              : <Error><img src={whosThatPokemon} alt='Quem é esse Pokemon?' /></Error>
+              : <S.Error><img src={whosThatPokemon} alt='Quem é esse Pokemon?' /></S.Error>
             }
           </div>
         }
