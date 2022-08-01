@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import search from "../../assets/search.png"
 
 export const Bg = styled.div`
   max-width: 90%;
@@ -8,16 +9,26 @@ export const Bg = styled.div`
   form {
     display: flex;
     justify-content: center;
-    margin-top: 3em;
+    margin: 3em auto 0 auto;
 
-    input{
+    input {
+      width: 70%;
       height: 2em;
-    }
-    button {
-      font-weight: bold;
-      background-color: #fff;
-      border: 1px solid #918c8c;
-      cursor: pointer;
+      border: 3px solid #add8e6;
+      border-radius: 10px;
+      background-image: url(${search});
+      background-size: 20px;
+      background-position: 5px 5px;
+      background-repeat: no-repeat;
+      padding-left: 40px;
+
+      @media (min-width: 768px) {
+        width: 35%;
+      }
+
+      @media (min-width: 1024px) {
+        width: 25%;
+      }
     }
   }
 `
