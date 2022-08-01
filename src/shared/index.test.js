@@ -3,6 +3,8 @@ import { colors } from './colorsBgPokemons'
 import { firstLetterUpperCase, firstLetterUpperCaseType } from './firstLetterUpperCase'
 import { handleFavorite } from './handleFavorite'
 import { loadFavoritePokemons } from './loadFavoritePokemons'
+import { navigateToDetailsPokemon } from './navigateToDetailsPokemon'
+import { verifyFavorite } from './verifyFavorite'
 
 describe("firstLetterUpperCase", () => {
   it("firstLetterUpperCase should be a function", () => {
@@ -67,5 +69,29 @@ describe("loadFavoritePokemons", () => {
     const state = jest.fn()
     loadFavoritePokemons(state)
     expect(state).toHaveBeenCalled()
+  })
+})
+
+describe("navigateToDetailsPokemon", () => {
+  it("navigateToDetailsPokemon should be a function", () => {
+    expect(navigateToDetailsPokemon).toBeInstanceOf(Function)
+  })
+
+  it('must set values to statePokemon', () => {
+    const statePokemon = jest.fn()
+    loadFavoritePokemons(statePokemon)
+    expect(statePokemon).toHaveBeenCalled()
+  })
+
+  it('must set values to stateSearched', () => {
+    const stateSearched = jest.fn()
+    loadFavoritePokemons(stateSearched)
+    expect(stateSearched).toHaveBeenCalled()
+  })
+})
+
+describe("verifyFavorite", () => {
+  it("verifyFavorite should be a function", () => {
+    expect(verifyFavorite).toBeInstanceOf(Function)
   })
 })
