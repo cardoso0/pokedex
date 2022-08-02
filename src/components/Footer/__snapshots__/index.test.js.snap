@@ -5,7 +5,7 @@ exports[`FooterComponent component rendering 1`] = `
   className="sc-bczRLJ lohbCs"
 >
   <p>
-    Desenvolvido por Felipe Cardoso
+    footer
   </p>
 </footer>
 `;
