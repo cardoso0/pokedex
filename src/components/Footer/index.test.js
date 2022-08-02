@@ -12,7 +12,7 @@ describe("FooterComponent", () => {
 
   it ("must contain this paragraph Desenvolvido por Felipe Cardoso", () => {
     render(<Footer />)
-    const footerParagraph = screen.getByText("Desenvolvido por Felipe Cardoso")
+    const footerParagraph = screen.getByText("footer")
     expect(footerParagraph).toBeTruthy()
   })
 
