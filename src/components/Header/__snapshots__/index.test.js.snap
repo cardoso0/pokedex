@@ -30,7 +30,7 @@ exports[`Header Component component rendering | snapshot 1`] = `
         href="/pokedex/favorites"
         onClick={[Function]}
       >
-        Favoritos
+        Menu.fav
       </a>
     </nav>
     <a

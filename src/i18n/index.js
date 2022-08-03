@@ -1,19 +1,16 @@
 import i18n from "i18next"
 import { initReactI18next } from "react-i18next"
-
-import enJson from './translations/en.json'
-import ptBRJson from './translations/ptBR.json'
+import { messages } from "./languages"
 
 i18n.use(initReactI18next).init({
   lng: navigator.language,
-  // fallbackLng: "ptBR",
+  // fallbackLng: "en-US",
   interpolation: {
     escapeValue: false,
   },
-  resources: {
-    'en-US': enJson,
-    'pt-BR': ptBRJson,
-  },
+  defaultNS: ['translations'],
+  ns: ['translations'],
+  resources: messages,
 })
 
 export default i18n

@@ -2,6 +2,7 @@ import * as S from './style'
 import ReactPaginate from 'react-paginate'
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Footer, Form, Header, Pokemon, Title } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
@@ -18,6 +19,7 @@ export const Pokedex = () => {
 
   const { setPokemon, setIsSearched, pokemonSaved, setPokemonSaved, favorites, setFavorites } = useContext(Context)
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
+  const { t } = useTranslation()
 
   const fetchData = async () => {
     try {
@@ -66,10 +68,10 @@ export const Pokedex = () => {
       <Header />
       <S.Bg>
         <Title 
-          title={'Está preparado para essa jornada?'}
-          subtitle={'Forme sua equipe pokémon!'}
+          title={t('Title.title')}
+          subtitle={t('Title.subtitle')}
         />
-        <Form placeholder={'Digite um Pokemon'} />
+        <Form placeholder={t('Form.placeholder')} />
         {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
           <S.Loading />
