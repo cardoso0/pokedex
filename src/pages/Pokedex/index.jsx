@@ -68,10 +68,10 @@ export const Pokedex = () => {
       <Header />
       <S.Bg>
         <Title 
-          title={t('areYouReady')}
-          subtitle={t('formYourTeam')}
+          title={t('Title.title')}
+          subtitle={t('Title.subtitle')}
         />
-        <Form placeholder={t('placeholder')} />
+        <Form placeholder={t('Form.placeholder')} />
         {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
           <S.Loading />

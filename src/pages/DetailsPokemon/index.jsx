@@ -22,7 +22,7 @@ export const DetailsPokemon = () => {
     <div>
       <Header />
       <S.Height>
-        <Form placeholder={t('placeholder')} />
+        <Form placeholder={t('Form.placeholder')} />
         {isSearched &&
           <div>
             {pokemon
