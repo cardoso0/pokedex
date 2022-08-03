@@ -14,7 +14,7 @@ exports[`Menu Component component rendering | snapshot 1`] = `
     href="/pokedex/favorites"
     onClick={[Function]}
   >
-    menuFav
+    Menu.fav
   </a>
 </nav>
 `;
