@@ -12,7 +12,7 @@ describe("FooterComponent", () => {
 
   it ("must contain this paragraph Desenvolvido por Felipe Cardoso", () => {
     render(<Footer />)
-    const footerParagraph = screen.getByText("footer")
+    const footerParagraph = screen.getByText("Footer.copy")
     expect(footerParagraph).toBeTruthy()
   })
 
