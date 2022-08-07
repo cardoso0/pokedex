@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Card = styled.div`
   max-width: 230px;
   margin: 0 auto;
-  padding: 20px 0 50px 0;
+  padding: 20px 0 2rem; 0;
   h1 {
     text-align: center;
     margin-bottom: 1rem;
