@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   max-width: 230px;
-  margin: 0 auto;
-  padding: 20px 0 2rem; 0;
+  margin: 1.2rem auto 2rem;
+
   h1 {
     text-align: center;
     margin-bottom: 1rem;
@@ -26,7 +26,7 @@ export const Info = styled.div`
   border-radius: 0 0 10px 10px;
   height: 200px;
 
-  th[scope="row"] {
+  th {
     background: #FF6464;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
