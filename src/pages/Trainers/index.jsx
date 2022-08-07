@@ -28,6 +28,10 @@ export const Trainers = () => {
             />
           )}
         </S.Trainers>
+        <S.CallToAction>
+          <h1>Não vacile igual ao Ash</h1>
+          <button>Forme a sua equipe Pokémon!</button>
+        </S.CallToAction>
       </S.Bg>
       <Footer />
     </>
