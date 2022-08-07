@@ -12,6 +12,7 @@ export const Card = styled.div`
     text-align: center;
     border: 1px solid black;
     border-radius: 10px 10px 0 0;
+    cursor: pointer;
     img {
       max-width: 200px;
       height: 350px;
