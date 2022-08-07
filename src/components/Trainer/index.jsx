@@ -13,18 +13,20 @@ export const Trainer = props => {
       </figure>
       <S.Info>
         <table>
-          <tr>
-            <th scope="row">{age}</th>
-            <td>{textAge}</td>
-          </tr>
-          <tr>
-            <th scope="row">{region}</th>
-            <td>{textRegion}</td>
-          </tr>
-          <tr>
-            <th scope="row">{city}</th>
-            <td>{textCity}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <th scope="row">{age}</th>
+              <td>{textAge}</td>
+            </tr>
+            <tr>
+              <th scope="row">{region}</th>
+              <td>{textRegion}</td>
+            </tr>
+            <tr>
+              <th scope="row">{city}</th>
+              <td>{textCity}</td>
+            </tr>
+          </tbody>
         </table>
         <p>{obsA}</p>
         <p>{obsB}</p>
