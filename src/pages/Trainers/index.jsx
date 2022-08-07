@@ -3,7 +3,7 @@ import { Footer, Header, Title, Trainer } from "../../components"
 import { trainers } from "../../components/Trainer/trainers"
 
 export const Trainers = () => {
-  // console.log(trainers[0].name)
+
   return (
     <>
       <Header />
