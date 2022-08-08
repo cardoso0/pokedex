@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trainer Component component rendering | snapshot 1`] = `
+<div
+  className="sc-bczRLJ jhlpqo"
+>
+  <h1 />
+  <figure>
+    <img />
+  </figure>
+  <div
+    className="sc-gsnTZi cKbZtm"
+  >
+    <table>
+      <tbody>
+        <tr>
+          <th
+            scope="row"
+          />
+          <td />
+        </tr>
+        <tr>
+          <th
+            scope="row"
+          />
+          <td />
+        </tr>
+        <tr>
+          <th
+            scope="row"
+          />
+          <td />
+        </tr>
+      </tbody>
+    </table>
+    <p />
+    <p />
+  </div>
+</div>
+`;
