@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Header/index.jsx</title>
+    <title>Code coverage report for Menu/index.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">Header</a> index.jsx</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">Menu</a> index.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/22</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/22</span>
+                <span class='fraction'>16/16</span>
             </div>
         
             
@@ -79,54 +79,39 @@
 <a name='L14'></a><a href='#L14'>14</a>
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
-<a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a>
-<a name='L19'></a><a href='#L19'>19</a>
-<a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L17'></a><a href='#L17'>17</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span></td><td class="text"><pre class="prettyprint lang-js">import * as S from "./style"
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as S from './style'
 import { Link } from 'react-router-dom'
-import pokedex from "../../assets/pokedex.png"
-import pokebola from "../../assets/favicon.png"
-import { Menu } from "../Menu"
+import { useTranslation } from 'react-i18next'
 &nbsp;
-export const Header = () =&gt; {
+export const Menu = () =&gt; {
+&nbsp;
+  const { t } = useTranslation()
 &nbsp;
   return (
-    &lt;S.Bg&gt;
-      &lt;S.Header&gt;
-        &lt;Link to='/pokedex' &gt;
-          &lt;img className="logo" src={pokedex} alt="logo pokedex" /&gt;
-        &lt;/Link&gt;
-        &lt;Menu /&gt;
-        &lt;Link to='/pokedex/favorites'&gt;
-          &lt;img className="pokebola" src={pokebola} alt="pokebola" /&gt;
-        &lt;/Link&gt;
-      &lt;/S.Header&gt;
-    &lt;/S.Bg&gt;
+    &lt;S.Menu&gt;
+      &lt;Link to='/'&gt;Home&lt;/Link&gt;
+      &lt;Link to='/pokedex'&gt;Pokédex&lt;/Link&gt;
+      &lt;Link to='/favorites'&gt;{t('Menu.fav')}&lt;/Link&gt;
+    &lt;/S.Menu&gt;
   )
-}</pre></td></tr></table></pre>
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

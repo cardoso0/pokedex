@@ -5,13 +5,19 @@ exports[`Menu Component component rendering | snapshot 1`] = `
   className="sc-bczRLJ gIEkxD"
 >
   <a
-    href="/pokedex/"
+    href="/"
     onClick={[Function]}
   >
     Home
   </a>
   <a
-    href="/pokedex/favorites"
+    href="/pokedex"
+    onClick={[Function]}
+  >
+    Pokédex
+  </a>
+  <a
+    href="/favorites"
     onClick={[Function]}
   >
     Menu.fav
