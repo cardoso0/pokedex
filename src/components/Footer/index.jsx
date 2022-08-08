@@ -7,7 +7,7 @@ export const Footer = () => {
 
   return (
     <S.Bg>
-      <p>{t('footer')}</p>
+      <p>{t('Footer.copy')}</p>
     </S.Bg>
   )
 }
