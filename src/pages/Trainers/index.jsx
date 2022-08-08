@@ -2,8 +2,11 @@ import * as S from './style'
 import { Footer, Header, Title, Trainer } from "../../components"
 import { trainers } from "../../components/Trainer/trainers"
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export const Trainers = () => {
+
+  const { t } = useTranslation()
 
   const [trainer, setTrainer] = useState('')
 
@@ -16,8 +19,8 @@ export const Trainers = () => {
       <Header />
       <S.Bg>
         <Title
-          title={'Está pronto para iniciar a jornada?'}
-          subtitle={'Escolha um Treinador'}
+          title={t('Title.titleH')}
+          subtitle={t('Title.subtitleH')}
         />
         <S.Trainers>
           {trainers.map(item =>
@@ -37,8 +40,8 @@ export const Trainers = () => {
           )}
         </S.Trainers>
         <S.CallToAction>
-          <h1>Não vacile igual ao Ash</h1>
-          <button onClick={() => localStorage.setItem('trainer', trainer)}>Forme a sua equipe Pokémon!</button>
+          <h1>{t('Home.title')}</h1>
+          <button onClick={() => localStorage.setItem('trainer', trainer)}>{t('Home.btn')}</button>
         </S.CallToAction>
       </S.Bg>
       <Footer />
