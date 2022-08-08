@@ -13,7 +13,7 @@ export const Header = () => {
           <img className="logo" src={pokedex} alt="logo pokedex" />
         </Link>
         <Menu />
-        <Link to='/pokedex/favorites'>
+        <Link to='/favorites'>
           <img className="pokebola" src={pokebola} alt="pokebola" />
         </Link>
       </S.Header>
