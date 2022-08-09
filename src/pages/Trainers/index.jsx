@@ -1,14 +1,15 @@
 import * as S from './style'
 import { Footer, Header, Title, Trainer } from "../../components"
 import { trainers } from "../../components/Trainer/trainers"
-import { useState } from 'react'
+import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ContextTrainer } from '../../contexts/ContextTrainer'
 
 export const Trainers = () => {
 
   const { t } = useTranslation()
 
-  const [trainer, setTrainer] = useState('')
+  const { trainer, setTrainer } = useContext(ContextTrainer)
 
   const handleClick = (name) => {
     setTrainer(name)
