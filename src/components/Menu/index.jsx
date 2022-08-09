@@ -8,9 +8,9 @@ export const Menu = () => {
 
   return (
     <S.Menu>
-      <Link to='/trainers/'>Home</Link>
-      <Link to='/trainers/pokedex'>Pokédex</Link>
-      <Link to='/trainers/favorites'>{t('Menu.fav')}</Link>
+      <Link to='/pokedex/trainers/'>Home</Link>
+      <Link to='/pokedex/pokedex'>Pokédex</Link>
+      <Link to='/pokedex/favorites'>{t('Menu.fav')}</Link>
     </S.Menu>
   )
 }
