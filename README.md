@@ -1,16 +1,19 @@
 <h1 align="center">Pokédex</h1>
-<p> Nessa aplicação podemos consultar pokemons. Ao iniciar, temos uma lista completa com todos pokemons. E também é possível procurar por um pokemon especifico. </p>
+<p>Ao iniciar, temos uma lista completa com todos Pokemons. <br> É possível procurar por um Pokemon especifico. <br> Contamos também com um sistema de favoritos, seguindo a ideia do anime que cada treinador pode carregar consigo 6 Pokébolas por vez.</p>
 <h4 align="center"> 
 	🚧  React Select 🚀 Em construção...  🚧
 </h4>
 
 ### Demonstração da aplicação
-
-<p align="center">
-  <img width="320" src="src/assets/to_readme/02.gif">
-  <img width="320" src="src/assets/to_readme/01.gif">
-</p>
-(Em breve)
+<div align="center">
+  <img width="320" height="160" src="src/assets/readme/pokedex.gif" alt="demonstração pokedex">
+</div>
+<div align="center">
+  <img width="320" height="160" src="src/assets/readme/busca.gif" alt="demonstração busca">
+</div>
+<div align="center">
+  <img width="320" height="162" src="src/assets/readme/favoritos.gif" alt="demonstração favoritos">
+</div>
 
 Clique <a href="https://cardoso0.github.io/pokedex/" target="_blank">aqui</a> para visualizar o projeto no seu navegador
 
