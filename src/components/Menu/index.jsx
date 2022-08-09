@@ -8,8 +8,8 @@ export const Menu = () => {
 
   return (
     <S.Menu>
-      <Link to='/pokedex/trainers/'>Home</Link>
-      <Link to='/pokedex/pokedex'>Pokédex</Link>
+      <Link to='/pokedex/'>Home</Link>
+      <Link to='/pokedex/pokedexx'>Pokédex</Link>
       <Link to='/pokedex/favorites'>{t('Menu.fav')}</Link>
     </S.Menu>
   )
