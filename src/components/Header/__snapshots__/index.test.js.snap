@@ -8,7 +8,7 @@ exports[`Header Component component rendering | snapshot 1`] = `
     className="sc-gsnTZi dgMtgR"
   >
     <a
-      href="/trainers/pokedex"
+      href="/pokedex/pokedexx"
       onClick={[Function]}
     >
       <img
@@ -40,7 +40,7 @@ exports[`Header Component component rendering | snapshot 1`] = `
       </a>
     </nav>
     <a
-      href="/trainers/favorites"
+      href="/pokedex/favorites"
       onClick={[Function]}
     >
       <img
