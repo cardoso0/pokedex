@@ -8,7 +8,7 @@ exports[`Header Component component rendering | snapshot 1`] = `
     className="sc-gsnTZi dgMtgR"
   >
     <a
-      href="/pokedex/"
+      href="/pokedex"
       onClick={[Function]}
     >
       <img
@@ -21,20 +21,26 @@ exports[`Header Component component rendering | snapshot 1`] = `
       className="sc-dkzDqf dwhkCq"
     >
       <a
-        href="/pokedex/"
+        href="/"
         onClick={[Function]}
       >
         Home
       </a>
       <a
-        href="/pokedex/favorites"
+        href="/pokedex"
         onClick={[Function]}
       >
-        Favoritos
+        Pokédex
+      </a>
+      <a
+        href="/favorites"
+        onClick={[Function]}
+      >
+        Menu.fav
       </a>
     </nav>
     <a
-      href="/pokedex/favorites"
+      href="/favorites"
       onClick={[Function]}
     >
       <img

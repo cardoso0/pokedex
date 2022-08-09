@@ -1,5 +1,6 @@
 import * as S from './style'
 import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Footer, Form, Header, Pokemon } from '../../components'
 import { Context } from '../../contexts/Context'
 import whosThatPokemon from '../../assets/whosThatPokemon.png'
@@ -8,6 +9,7 @@ import { handleFavorite, verifyFavorite } from '../../shared'
 export const DetailsPokemon = () => {
 
   const { pokemon, isSearched, favorites, setFavorites } = useContext(Context)
+  const { t } = useTranslation()
 
   let move = []
   if (pokemon) pokemon.moves
@@ -20,7 +22,7 @@ export const DetailsPokemon = () => {
     <div>
       <Header />
       <S.Height>
-        <Form placeholder={'Digite um Pokemon'} />
+        <Form placeholder={t('Form.placeholder')} />
         {isSearched &&
           <div>
             {pokemon

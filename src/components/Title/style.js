@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Title = styled.section`
   max-width: 90%;
-  margin: 3rem auto 0;
+  margin: 2rem auto 0;
   h1, h2 {
-    margin: 0 auto;
+    margin: 0 auto 0.6rem;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.2em;
