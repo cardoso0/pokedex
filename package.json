@@ -2,7 +2,7 @@
   "name": "pokedex",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://cardoso0.github.io/pokedex/",
+  "homepage": "https://cardoso0.github.io/",
   "scripts": {
     "test:watch": "npm run test -- --watch",
     "test:commit": "jest -o",

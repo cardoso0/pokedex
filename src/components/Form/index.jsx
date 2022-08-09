@@ -20,7 +20,7 @@ export const Form = props => {
     } catch {
       setPokemon("")
     }
-    navigate("/detailspokemon")
+    navigate("/trainers/detailspokemon")
     setIsSearched(true)
   }
 

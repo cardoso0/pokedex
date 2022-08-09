@@ -9,11 +9,11 @@ export const Header = () => {
   return (
     <S.Bg>
       <S.Header>
-        <Link to='/pokedex' >
+        <Link to='/trainers/pokedex' >
           <img className="logo" src={pokedex} alt="logo pokedex" />
         </Link>
         <Menu />
-        <Link to='/favorites'>
+        <Link to='/trainers/favorites'>
           <img className="pokebola" src={pokebola} alt="pokebola" />
         </Link>
       </S.Header>

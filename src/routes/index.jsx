@@ -6,10 +6,10 @@ export const MainRoutes = () => {
   return (
     <ContextProvider>
       <Routes>
-        <Route path='/' element={<Trainers />} />
-        <Route path='/pokedex' element={<Pokedex />} />
-        <Route path='/detailspokemon' element={<DetailsPokemon />} />
-        <Route path='/favorites' element={<Favorites />} />
+        <Route path='/trainers' element={<Trainers />} />
+        <Route path='/trainers/pokedex' element={<Pokedex />} />
+        <Route path='/trainers/detailspokemon' element={<DetailsPokemon />} />
+        <Route path='/trainers/favorites' element={<Favorites />} />
       </Routes>
     </ContextProvider>
   )
