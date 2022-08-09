@@ -21,19 +21,19 @@ exports[`Header Component component rendering | snapshot 1`] = `
       className="sc-dkzDqf dwhkCq"
     >
       <a
-        href="/trainers/"
+        href="/pokedex/trainers/"
         onClick={[Function]}
       >
         Home
       </a>
       <a
-        href="/trainers/pokedex"
+        href="/pokedex/pokedex"
         onClick={[Function]}
       >
         Pokédex
       </a>
       <a
-        href="/trainers/favorites"
+        href="/pokedex/favorites"
         onClick={[Function]}
       >
         Menu.fav
