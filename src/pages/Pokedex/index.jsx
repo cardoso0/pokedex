@@ -35,7 +35,7 @@ export const Pokedex = () => {
   }
 
   useEffect(() => {
-    loadFavoritePokemons(setFavorites)
+    loadFavoritePokemons(setFavorites, "favorites")
   }, [])
 
   useEffect(() => {
