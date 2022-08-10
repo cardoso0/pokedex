@@ -7,7 +7,7 @@ import { Footer, Form, Header, Pokemon, Title } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
 import { Context } from '../../contexts/index'
-import { verifyFavorite, handleFavorite, loadFavoritePokemons, navigateToDetailsPokemon } from '../../shared'
+import { verifyFavorite, handleFavorite, getItemToLocalStorage, navigateToDetailsPokemon } from '../../shared'
 
 export const Pokedex = () => {
 
@@ -35,7 +35,7 @@ export const Pokedex = () => {
   }
 
   useEffect(() => {
-    loadFavoritePokemons(setFavorites, "favorites")
+    getItemToLocalStorage(setFavorites, "favorites")
   }, [])
 
   useEffect(() => {

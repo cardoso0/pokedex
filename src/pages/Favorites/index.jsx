@@ -1,7 +1,7 @@
 import * as S from './style'
 import { useContext, useEffect } from 'react'
 import { Footer, Header, Pokemon, Trainer } from '../../components'
-import { verifyFavorite, loadFavoritePokemons, navigateToDetailsPokemon } from '../../shared'
+import { verifyFavorite, getItemToLocalStorage, navigateToDetailsPokemon } from '../../shared'
 import { useNavigate } from 'react-router-dom'
 import { Context, ContextTrainer } from '../../contexts/index'
 
@@ -26,8 +26,8 @@ export const Favorites = () => {
   }
 
   useEffect(() => {
-    loadFavoritePokemons(setFavorites, "favorites")
-    loadFavoritePokemons(setTrainer, "trainer")
+    getItemToLocalStorage(setFavorites, "favorites")
+    getItemToLocalStorage(setTrainer, "trainer")
   }, [])
 
   return (
