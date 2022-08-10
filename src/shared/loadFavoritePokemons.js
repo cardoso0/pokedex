@@ -1,4 +1,4 @@
-export const loadFavoritePokemons = (setState) => {
-  const pokemon = JSON.parse(localStorage.getItem("favorites")) || []
-  setState(pokemon)
+export const loadFavoritePokemons = (setState, keyStorage) => {
+  const item = JSON.parse(localStorage.getItem(keyStorage)) || []
+  setState(item)
 }
