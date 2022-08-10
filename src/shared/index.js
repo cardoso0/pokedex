@@ -2,7 +2,7 @@ import { colors } from "./colorsBgPokemons";
 import { firstLetterUpperCase } from "./firstLetterUpperCase";
 import { handleFavorite } from "./handleFavorite"
 import { verifyFavorite } from "./verifyFavorite"
-import { loadFavoritePokemons } from "./loadFavoritePokemons"
+import { getItemToLocalStorage } from "./getItemToLocalStorage"
 import { navigateToDetailsPokemon } from "./navigateToDetailsPokemon"
 
 export {
@@ -10,6 +10,6 @@ export {
   firstLetterUpperCase,
   handleFavorite,
   verifyFavorite,
-  loadFavoritePokemons,
+  getItemToLocalStorage,
   navigateToDetailsPokemon
 }

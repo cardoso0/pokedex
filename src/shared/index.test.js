@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { colors } from './colorsBgPokemons'
 import { firstLetterUpperCase, firstLetterUpperCaseType } from './firstLetterUpperCase'
 import { handleFavorite } from './handleFavorite'
-import { loadFavoritePokemons } from './loadFavoritePokemons'
+import { getItemToLocalStorage } from './getItemToLocalStorage'
 import { navigateToDetailsPokemon } from './navigateToDetailsPokemon'
 import { verifyFavorite } from './verifyFavorite'
 
@@ -60,14 +60,14 @@ describe("handleFavorite", () => {
   })
 })
 
-describe("loadFavoritePokemons", () => {
-  it("loadFavoritePokemons should be a function", () => {
-    expect(loadFavoritePokemons).toBeInstanceOf(Function)
+describe("getItemToLocalStorage", () => {
+  it("getItemToLocalStorage should be a function", () => {
+    expect(getItemToLocalStorage).toBeInstanceOf(Function)
   })
 
   it('must set value to state', () => {
     const state = jest.fn()
-    loadFavoritePokemons(state)
+    getItemToLocalStorage(state)
     expect(state).toHaveBeenCalled()
   })
 })
@@ -79,13 +79,13 @@ describe("navigateToDetailsPokemon", () => {
 
   it('must set values to statePokemon', () => {
     const statePokemon = jest.fn()
-    loadFavoritePokemons(statePokemon)
+    getItemToLocalStorage(statePokemon)
     expect(statePokemon).toHaveBeenCalled()
   })
 
   it('must set values to stateSearched', () => {
     const stateSearched = jest.fn()
-    loadFavoritePokemons(stateSearched)
+    getItemToLocalStorage(stateSearched)
     expect(stateSearched).toHaveBeenCalled()
   })
 })
