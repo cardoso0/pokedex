@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next'
 import { Footer, Form, Header, Pokemon, Title } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
-import { Context } from '../../contexts/Context'
-import { verifyFavorite, handleFavorite, loadFavoritePokemons, navigateToDetailsPokemon } from '../../shared'
+import { Context } from '../../contexts/index'
+import { verifyFavorite, handleFavorite, getItemToLocalStorage, navigateToDetailsPokemon } from '../../shared'
 
 export const Pokedex = () => {
 
@@ -15,7 +15,6 @@ export const Pokedex = () => {
 
   const [loading, setLoading] = useState(false)
   const [pokemons, setPokemons] = useState([])
-  const [error, setError] = useState(false)
 
   const { setPokemon, setIsSearched, pokemonSaved, setPokemonSaved, favorites, setFavorites } = useContext(Context)
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
@@ -35,7 +34,7 @@ export const Pokedex = () => {
   }
 
   useEffect(() => {
-    loadFavoritePokemons(setFavorites)
+    getItemToLocalStorage(setFavorites, "favorites")
   }, [])
 
   useEffect(() => {
@@ -72,7 +71,6 @@ export const Pokedex = () => {
           subtitle={t('Title.subtitle')}
         />
         <Form placeholder={t('Form.placeholder')} />
-        {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
           <S.Loading />
         ) : (

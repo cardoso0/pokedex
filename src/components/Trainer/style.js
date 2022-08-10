@@ -3,19 +3,34 @@ import styled from "styled-components";
 export const Card = styled.div`
   max-width: 230px;
   margin: 1.2rem auto 2rem;
-
+  cursor: pointer;
   h1 {
     text-align: center;
     margin-bottom: 1rem;
   }
   figure {
+    width: 230px;
     text-align: center;
     border: 1px solid #000;
     border-radius: 10px 10px 0 0;
-    cursor: pointer;
     img {
       max-width: 200px;
       height: 350px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :hover {
+      padding: 0 25px 10px 25px;
+      background-color: #FFF;
+      transition: transform .3s; /* Animation */
+      // width: 180px;
+      transform: scale(1);
+      border: 1px solid #000;
+      border-radius: 15px;
+      figure {
+        border: none;
+      }
     }
   }
 `
