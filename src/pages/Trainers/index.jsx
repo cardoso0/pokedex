@@ -11,8 +11,8 @@ export const Trainers = () => {
 
   const { trainer, setTrainer } = useContext(ContextTrainer)
 
-  const handleClick = (name) => {
-    setTrainer(name)
+  const handleClick = (trainerr) => {
+    setTrainer(trainerr)
   }
 
   return (
@@ -24,9 +24,9 @@ export const Trainers = () => {
           subtitle={t('Title.subtitleH')}
         />
         <S.Trainers>
-          {trainers.map(item =>
-            <Trainer
-              select={() => handleClick(item.name)}
+          {trainers.map((item, index) =>
+            <Trainer key={index}
+              select={() => handleClick(item)}
               name={item.name}
               image={item.image}
               age={'Idade'}
@@ -42,7 +42,7 @@ export const Trainers = () => {
         </S.Trainers>
         <S.CallToAction>
           <h1>{t('Home.title')}</h1>
-          <button onClick={() => localStorage.setItem('trainer', trainer)}>{t('Home.btn')}</button>
+          <button onClick={() => localStorage.setItem('trainer', JSON.stringify(trainer))}>{t('Home.btn')}</button>
         </S.CallToAction>
       </S.Bg>
       <Footer />
