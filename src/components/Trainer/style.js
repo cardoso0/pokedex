@@ -9,6 +9,7 @@ export const Card = styled.div`
     margin-bottom: 1rem;
   }
   figure {
+    width: 230px;
     text-align: center;
     border: 1px solid #000;
     border-radius: 10px 10px 0 0;
