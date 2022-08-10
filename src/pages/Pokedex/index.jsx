@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { Footer, Form, Header, Pokemon, Title } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
-import { Context } from '../../contexts/Context'
+import { Context } from '../../contexts/index'
 import { verifyFavorite, handleFavorite, loadFavoritePokemons, navigateToDetailsPokemon } from '../../shared'
 
 export const Pokedex = () => {

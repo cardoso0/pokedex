@@ -2,7 +2,7 @@ import * as S from './style'
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Footer, Form, Header, Pokemon } from '../../components'
-import { Context } from '../../contexts/Context'
+import { Context } from '../../contexts/index'
 import whosThatPokemon from '../../assets/whosThatPokemon.png'
 import { handleFavorite, verifyFavorite } from '../../shared'
 

@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { ContextProvider } from '../contexts/Context'
-import { ContextTrainerProvider } from '../contexts/ContextTrainer'
+import { ContextProvider, ContextTrainerProvider} from '../contexts/index'
 import { Favorites, Pokedex, DetailsPokemon, Trainers } from '../pages'
 
 export const MainRoutes = () => {
