@@ -15,7 +15,6 @@ export const Pokedex = () => {
 
   const [loading, setLoading] = useState(false)
   const [pokemons, setPokemons] = useState([])
-  const [error, setError] = useState(false)
 
   const { setPokemon, setIsSearched, pokemonSaved, setPokemonSaved, favorites, setFavorites } = useContext(Context)
   const { pageCount, changePage, pagesVisited, itensPerPage } = usePagination({ pokemons })
@@ -72,7 +71,6 @@ export const Pokedex = () => {
           subtitle={t('Title.subtitle')}
         />
         <Form placeholder={t('Form.placeholder')} />
-        {error && <div>Não encontramos os pokemons :/</div>}
         {loading ? (
           <S.Loading />
         ) : (
