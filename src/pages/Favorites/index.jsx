@@ -11,7 +11,7 @@ export const Favorites = () => {
   const navigate = useNavigate()
 
   const { favorites, setFavorites, setPokemon, setIsSearched } = useContext(Context)
-  const { trainer } = useContext(ContextTrainer)
+  const { trainer, setTrainer } = useContext(ContextTrainer)
 
   const removeFavorite = (pokemon) => {
     let updatedFavorites = [...favorites]
@@ -27,7 +27,8 @@ export const Favorites = () => {
   }
 
   useEffect(() => {
-    loadFavoritePokemons(setFavorites)
+    loadFavoritePokemons(setFavorites, "favorites")
+    loadFavoritePokemons(setTrainer, "trainer")
   }, [])
 
   return (
