@@ -2,7 +2,7 @@
 
 exports[`Menu Component component rendering | snapshot 1`] = `
 <nav
-  className="sc-bczRLJ gIEkxD"
+  className="sc-bczRLJ hSZVCm"
 >
   <a
     href="/pokedex/"
