@@ -21,10 +21,9 @@ export const Card = styled.div`
 
   @media (min-width: 1024px) {
     :hover {
-      padding: 0 25px 10px 25px;
+      padding: 0 10px 10px 10px;
       background-color: #FFF;
-      transition: transform .3s; /* Animation */
-      // width: 180px;
+      transition: transform 0.3s; /* Animation */
       transform: scale(1);
       border: 1px solid #000;
       border-radius: 15px;
