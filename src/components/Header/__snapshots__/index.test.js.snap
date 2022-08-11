@@ -8,7 +8,7 @@ exports[`Header Component component rendering | snapshot 1`] = `
     className="sc-gsnTZi cDjJYh"
   >
     <a
-      href="/pokedex/pokedexx"
+      href="/pokedex/"
       onClick={[Function]}
     >
       <img
