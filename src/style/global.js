@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   *{
     margin: 0;
     padding: 0;
@@ -43,7 +43,7 @@ export default createGlobalStyle`
   }
   
   body {
-    background: ${(props) => props.theme.color.background};
-    color: ${(props) => props.theme.color.text}};
+    background: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text}};
   }
 `
