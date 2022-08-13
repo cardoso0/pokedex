@@ -39,6 +39,14 @@ exports[`Header Component component rendering | snapshot 1`] = `
         Menu.fav
       </a>
     </nav>
+    <div>
+      <button
+        onClick={[Function]}
+      >
+        Tema atual: 
+        normal
+      </button>
+    </div>
     <a
       href="/pokedex/favorites"
       onClick={[Function]}
