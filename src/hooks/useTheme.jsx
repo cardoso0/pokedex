@@ -1,5 +1,4 @@
-import contrast from '../style/themes/contrast'
-import normal from '../style/themes/normal'
+import { normal, contrast } from '../style/themes/highContrast/theme'
 import { useState } from "react"
 
 export const useTheme = () => {
