@@ -1,15 +1,17 @@
-import { createContext } from 'react'
+import { createContext, useContext, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { useTheme } from '../hooks/useTheme'
+import { normal, contrast } from '../style/themes/highContrast/theme'
 
 export const CustomTheme = createContext()
 
 export const CustomThemeProvider = ({ children }) => {
   
-  const { verifyTheme, switchTheme } = useTheme()
+  const [tema, setTema] = useState(normal)
+  const theme = JSON.parse(localStorage.getItem('hightContrast'))
+  const verifyTheme = theme === null ? tema : theme
 
   return (
-    <CustomTheme.Provider value={{ switchTheme, verifyTheme }}>
+    <CustomTheme.Provider value={{ tema, setTema }}>
       <ThemeProvider theme={verifyTheme}>
         {children}
       </ThemeProvider>
@@ -17,4 +19,21 @@ export const CustomThemeProvider = ({ children }) => {
   )
 }
 
-export default ThemeProvider;
+export const useThemeContext = () => {
+
+  const { tema, setTema } = useContext(CustomTheme);
+  
+  const switchTheme = () => {
+    if (tema.title === 'contrast') {
+      setTema(normal)
+      localStorage.setItem('hightContrast', JSON.stringify(normal))
+    } else {
+      setTema(contrast)
+      localStorage.setItem('hightContrast', JSON.stringify(contrast))
+    }
+  }
+  
+  return {
+    switchTheme
+  }
+}
