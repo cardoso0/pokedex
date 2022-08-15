@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Bg = styled.div`
-  background-color: #ff0400;
+  // background-color: #ff0400;
+  background: ${(props) => props.theme.colors.primary};
+  border: ${(props) => props.theme.colors.border};
 `
 
 export const Header = styled.header`
