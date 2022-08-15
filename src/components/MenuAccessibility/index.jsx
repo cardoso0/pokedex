@@ -1,17 +1,10 @@
-import { GlobalStyle } from "../../style/global"
-import { ThemeProvider } from "styled-components"
-import { useTheme } from '../../hooks/useTheme'
 
-export const MenuAccessibility = () => {
 
-  const { switchTheme, verifyTheme } = useTheme()
+export const MenuAccessibility = (props) => {
 
   return (
-    <ThemeProvider theme={verifyTheme}>
-      <GlobalStyle />
-      <div>
-        <button onClick={() => switchTheme()}>Tema atual: </button>
-      </div>
-    </ThemeProvider>
+    <div>
+      <button onClick={props.switch}>Altere o Tema</button>
+    </div>
   )
 }

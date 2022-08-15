@@ -5,7 +5,7 @@ import pokebola from "../../assets/favicon.png"
 import { Menu } from "../Menu"
 import { MenuAccessibility } from "../MenuAccessibility"
 
-export const Header = () => {
+export const Header = (props) => {
 
   return (
     <S.Bg>
@@ -14,7 +14,7 @@ export const Header = () => {
           <img className="logo" src={pokedex} alt="logo pokedex" />
         </Link>
         <Menu />
-        <MenuAccessibility />
+        <MenuAccessibility switch={props.switch} />
         <Link to='/pokedex/favorites'>
           <img className="pokebola" src={pokebola} alt="pokebola" />
         </Link>

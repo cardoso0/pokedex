@@ -1,19 +1,18 @@
-import { ThemeProvider } from 'styled-components'
-import { useTheme } from './hooks/useTheme'
 import { MainRoutes } from './routes'
 import { GlobalStyle } from './style/global'
-
+import { CustomThemeProvider } from './contexts/CustomTheme'
+import { useTheme } from './hooks/useTheme'
+import { Header } from './components'
 const App = () => {
 
-  const { verifyTheme } = useTheme()
+  const { switchTheme } = useTheme()
 
   return (
-    <div>
-      <ThemeProvider theme={verifyTheme}>
-        <GlobalStyle />
-        <MainRoutes />
-      </ThemeProvider>
-    </div>
+    <CustomThemeProvider>
+      <GlobalStyle />
+      <Header switch={switchTheme}/>
+      <MainRoutes />
+    </CustomThemeProvider>
   )
 }
 
