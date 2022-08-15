@@ -2,7 +2,7 @@
 
 exports[`Header Component component rendering | snapshot 1`] = `
 <div
-  className="sc-bczRLJ xgqim"
+  className="sc-bczRLJ jhwWQE"
 >
   <header
     className="sc-gsnTZi cDjJYh"
@@ -44,7 +44,6 @@ exports[`Header Component component rendering | snapshot 1`] = `
         onClick={[Function]}
       >
         Tema atual: 
-        normal
       </button>
     </div>
     <a
