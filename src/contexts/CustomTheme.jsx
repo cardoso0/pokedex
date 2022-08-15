@@ -6,9 +6,10 @@ export const CustomTheme = createContext()
 
 export const CustomThemeProvider = ({ children }) => {
   
-  const [tema, setTema] = useState(normal)
   const theme = JSON.parse(localStorage.getItem('hightContrast'))
-  const verifyTheme = theme === null ? tema : theme
+  const verifyTheme = theme === null ? normal : theme
+
+  const [tema, setTema] = useState(verifyTheme)
 
   return (
     <CustomTheme.Provider value={{ tema, setTema }}>
