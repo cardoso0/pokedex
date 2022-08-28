@@ -21,12 +21,11 @@ export const Card = styled.div`
 
   @media (min-width: 1024px) {
     :hover {
+      background-color: ${(props) => props.theme.colors.background};
       padding: 0 25px 10px 25px;
-      background-color: #FFF;
       transition: transform .3s; /* Animation */
-      // width: 180px;
       transform: scale(1);
-      border: 1px solid #000;
+      border: 1px solid ${(props) => props.theme.colors.secondary};
       border-radius: 15px;
       figure {
         border: none;
