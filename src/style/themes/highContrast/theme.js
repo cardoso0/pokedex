@@ -14,8 +14,9 @@ export const contrast = {
 
   colors: {
     primary: '#191919',
+    secondary: '#ffff00',
     background: '#191919',
     text: '#fff',
-    border: '1px solid yellow'
+    border: '1px solid #ffff00'
   }
 }
