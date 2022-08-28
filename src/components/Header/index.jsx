@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <S.Bg>
       <S.Header>
-        <Link to='/pokedex/pokedexx' >
+        <Link to='/pokedex/' >
           <img className="logo" src={pokedex} alt="logo pokedex" />
         </Link>
         <Menu />
