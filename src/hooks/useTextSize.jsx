@@ -7,7 +7,7 @@ export const useTextSize = () => {
   const { textTheme, setTextTheme } = useContext(ContextTextSize);
   const [count, setCount] = useState(0)
 
-  const testeCount = () => {
+  const applyTheme = () => {
     if (count === 0) setTextTheme(normal)
     if (count === 1) setTextTheme(size1)
     if (count === 2) setTextTheme(size2)
@@ -19,18 +19,16 @@ export const useTextSize = () => {
     if (count < 4) {
       setCount(count + 1)
     }
-    console.log(count)
   }
   
   const textSizeDecrease = () => {
     if (count >= 1) {
       setCount(count - 1)
     }
-    console.log(count)
   }
   
   useEffect(() => {
-    testeCount()
+    applyTheme()
   },[count])
 
   return {
