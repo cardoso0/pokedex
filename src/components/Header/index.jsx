@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import pokedex from "../../assets/pokedex.png"
 import pokebola from "../../assets/favicon.png"
 import { Menu } from "../Menu"
+import { MenuAccessibility } from "../MenuAccessibility"
 
 export const Header = () => {
 
@@ -13,6 +14,7 @@ export const Header = () => {
           <img className="logo" src={pokedex} alt="logo pokedex" />
         </Link>
         <Menu />
+        <MenuAccessibility />
         <Link to='/pokedex/favorites'>
           <img className="pokebola" src={pokebola} alt="pokebola" />
         </Link>

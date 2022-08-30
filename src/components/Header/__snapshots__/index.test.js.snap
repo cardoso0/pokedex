@@ -2,7 +2,7 @@
 
 exports[`Header Component component rendering | snapshot 1`] = `
 <div
-  className="sc-bczRLJ xgqim"
+  className="sc-bczRLJ gePhco"
 >
   <header
     className="sc-gsnTZi cDjJYh"
@@ -39,6 +39,11 @@ exports[`Header Component component rendering | snapshot 1`] = `
         Menu.fav
       </a>
     </nav>
+    <div>
+      <button>
+        Altere o Tema
+      </button>
+    </div>
     <a
       href="/pokedex/favorites"
       onClick={[Function]}
