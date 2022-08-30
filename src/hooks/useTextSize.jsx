@@ -8,7 +8,7 @@ export const useTextSize = () => {
 
   const textSize = JSON.parse(localStorage.getItem('textSize'))
   const verifyCount = textSize === null ? 0 : textSize
-  
+
   const [count, setCount] = useState(verifyCount)
 
   const applyTheme = () => {
@@ -34,6 +34,7 @@ export const useTextSize = () => {
   }
 
   const normalTheme = () => {
+    setCount(0)
     setTextTheme(normal)
     localStorage.setItem('textSize', JSON.stringify(0))
   }
