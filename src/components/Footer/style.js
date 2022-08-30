@@ -5,4 +5,5 @@ export const Bg = styled.footer`
   text-align: center;
   padding: 1em;
   border: ${(props) => props.theme.colors.border};
+  font-size: calc(100% + ${(props) => props.theme.text.textSize});
 `

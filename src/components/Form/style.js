@@ -21,6 +21,7 @@ export const Bg = styled.div`
       background-position: 5px 5px;
       background-repeat: no-repeat;
       padding-left: 40px;
+      font-size: calc(90% + ${(props) => props.theme.text.textSize});
 
       @media (min-width: 768px) {
         width: 35%;
