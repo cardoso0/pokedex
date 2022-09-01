@@ -1,14 +1,17 @@
 import { MainRoutes } from './routes'
 import { GlobalStyle } from './style/global'
 import { CustomThemeProvider } from './contexts/CustomTheme'
+import { ContextTextSizeProvider } from './contexts/ContextTextSize'
 
 const App = () => {
 
   return (
-    <CustomThemeProvider>
-      <GlobalStyle />
-      <MainRoutes />
-    </CustomThemeProvider>
+    <ContextTextSizeProvider>
+      <CustomThemeProvider>
+        <GlobalStyle />
+        <MainRoutes />
+      </CustomThemeProvider>
+    </ContextTextSizeProvider>
   )
 }
 

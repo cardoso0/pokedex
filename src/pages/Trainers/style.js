@@ -16,12 +16,12 @@ export const CallToAction = styled.section`
 
   h1 {
     margin-bottom: 0.6rem;
-    font-size: 1.2rem;
+    font-size: calc(1.2rem + ${(props) => props.theme.textSize});
     font-weight: 600;
   }
 
   button {
-    font-size: 1rem;
+    font-size: calc(100% + ${(props) => props.theme.textSize});
     background-color: #FF6464;
     padding: 0.5rem;
     border: 1px solid black;
