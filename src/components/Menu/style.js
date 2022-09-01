@@ -5,7 +5,7 @@ export const Menu = styled.nav`
   justify-content: center;
   flex-wrap: wrap;
   padding: 15px 0;
-  font-size: calc(93% + ${(props) => props.theme.text.textSize});
+  font-size: calc(93% + ${(props) => props.theme.textSize});
 
   @media (min-width: 768px) {
     margin-right: 3rem;

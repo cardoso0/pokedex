@@ -7,7 +7,7 @@ export const Card = styled.div`
   h1 {
     text-align: center;
     margin-bottom: 1rem;
-    font-size: calc(200% + ${(props) => props.theme.text.textSize});
+    font-size: calc(200% + ${(props) => props.theme.textSize});
   }
   figure {
     width: 230px;
@@ -46,7 +46,7 @@ export const Info = styled.div`
     border-right: 1px solid #000;
     border-bottom: 1px solid #000;
     padding: 10px 20px 10px 10px;
-    font-size: calc(100% + ${(props) => props.theme.text.textSize});
+    font-size: calc(100% + ${(props) => props.theme.textSize});
   }
   td {
     text-align: center;
@@ -62,6 +62,6 @@ export const Info = styled.div`
   }
   p {
     padding: 5px 5px 0 5px;
-    font-size: calc(100% + ${(props) => props.theme.text.textSize});
+    font-size: calc(100% + ${(props) => props.theme.textSize});
   }
 `
