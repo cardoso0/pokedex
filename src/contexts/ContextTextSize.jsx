@@ -6,11 +6,11 @@ export const ContextTextSize = createContext()
 
 export const ContextTextSizeProvider = ({ children }) => {
 
-  const [textTheme, setTextTheme] = useState(normal)
+  const [textSize, setTextSize] = useState(normal)
 
   return (
-    <ContextTextSize.Provider value={{ textTheme, setTextTheme }}>
-      <ThemeProvider theme={textTheme}>
+    <ContextTextSize.Provider value={{ textSize, setTextSize }}>
+      <ThemeProvider theme={textSize}>
         {children}
       </ThemeProvider>
     </ContextTextSize.Provider>

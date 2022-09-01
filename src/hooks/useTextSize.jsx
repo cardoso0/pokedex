@@ -4,19 +4,19 @@ import { normal, size1, size2, size3, size4 } from '../style/themes/textSize/the
 
 export const useTextSize = () => {
 
-  const { textTheme, setTextTheme } = useContext(ContextTextSize)
+  const { textSize, setTextSize } = useContext(ContextTextSize)
 
-  const textSize = JSON.parse(localStorage.getItem('textSize'))
-  const verifyCount = textSize === null ? 0 : textSize
+  const getTextSize = JSON.parse(localStorage.getItem('textSize'))
+  const verifyCount = getTextSize === null ? 0 : getTextSize
 
   const [count, setCount] = useState(verifyCount)
 
   const applyTheme = () => {
-    if (count === 0)  setTextTheme(normal)
-    if (count === 1)  setTextTheme(size1)
-    if (count === 2)  setTextTheme(size2)
-    if (count === 3)  setTextTheme(size3)
-    if (count === 4)  setTextTheme(size4)
+    if (count === 0)  setTextSize(normal)
+    if (count === 1)  setTextSize(size1)
+    if (count === 2)  setTextSize(size2)
+    if (count === 3)  setTextSize(size3)
+    if (count === 4)  setTextSize(size4)
   }
 
   const textSizeIncrease = () => {
@@ -35,7 +35,7 @@ export const useTextSize = () => {
 
   const textSizeDefault = () => {
     setCount(0)
-    setTextTheme(normal)
+    setTextSize(normal)
     localStorage.setItem('textSize', JSON.stringify(0))
   }
 
@@ -47,6 +47,6 @@ export const useTextSize = () => {
     textSizeIncrease,
     textSizeDecrease,
     textSizeDefault,
-    textTheme
+    textSize
   }
 }
