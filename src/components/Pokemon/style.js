@@ -9,6 +9,7 @@ export const Pokemon = styled.div`
   background-color: ${prop => colors[prop.pokemonType]};
   text-align: center;
   font-weight: bold;
+  font-size: calc(100% + ${(props) => props.theme.textSize});
   
   .pokemonId {
     margin: auto 0;

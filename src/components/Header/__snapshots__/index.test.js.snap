@@ -2,13 +2,13 @@
 
 exports[`Header Component component rendering | snapshot 1`] = `
 <div
-  className="sc-bczRLJ xgqim"
+  className="sc-bczRLJ gePhco"
 >
   <header
-    className="sc-gsnTZi dgMtgR"
+    className="sc-gsnTZi cDjJYh"
   >
     <a
-      href="/pokedex/pokedexx"
+      href="/pokedex/"
       onClick={[Function]}
     >
       <img
@@ -18,7 +18,7 @@ exports[`Header Component component rendering | snapshot 1`] = `
       />
     </a>
     <nav
-      className="sc-dkzDqf dwhkCq"
+      className="sc-dkzDqf hSvDFj"
     >
       <a
         href="/pokedex/"
@@ -39,6 +39,11 @@ exports[`Header Component component rendering | snapshot 1`] = `
         Menu.fav
       </a>
     </nav>
+    <div>
+      <button>
+        Altere o Tema
+      </button>
+    </div>
     <a
       href="/pokedex/favorites"
       onClick={[Function]}
