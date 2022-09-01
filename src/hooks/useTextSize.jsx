@@ -33,7 +33,7 @@ export const useTextSize = () => {
     }
   }
 
-  const normalTheme = () => {
+  const textSizeDefault = () => {
     setCount(0)
     setTextTheme(normal)
     localStorage.setItem('textSize', JSON.stringify(0))
@@ -46,7 +46,7 @@ export const useTextSize = () => {
   return {
     textSizeIncrease,
     textSizeDecrease,
-    normalTheme,
+    textSizeDefault,
     textTheme
   }
 }
