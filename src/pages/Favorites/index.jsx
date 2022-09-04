@@ -25,6 +25,20 @@ export const Favorites = () => {
     setFavorites(updatedFavorites)
   }
 
+  const checkEnterKeyPressedToPokemon = (event, pokemon, setPokemon, setIsSearched, navigate) => {
+    let key = event.key === "Enter" || event.keyCode === 13
+    if (key) {
+      navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate)
+    }
+  }
+
+  const checkEnterKeyPressed = (event, pokemon) => {
+    let key = event.key === "Enter" || event.keyCode === 13
+    if (key) {
+      removeFavorite(pokemon)
+    }
+  }
+
   useEffect(() => {
     getItemToLocalStorage(setFavorites, "favorites")
     getItemToLocalStorage(setTrainer, "trainer")
@@ -35,6 +49,7 @@ export const Favorites = () => {
       <Header />
       <S.Height>
         <Trainer
+          tab={8}
           name={trainer.name}
           image={trainer.image}
           age={'Idade'}
@@ -50,10 +65,13 @@ export const Favorites = () => {
           {favorites.map((pokemon) => {
             return (
               <Pokemon pkBg={'pokemonBg'}
+                tab={9}
                 pokemon={pokemon}
                 key={pokemon.id}
                 handlePokemon={() => navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate)}
+                pokemonKeyUp={(event) => checkEnterKeyPressedToPokemon(event, pokemon, setPokemon, setIsSearched, navigate)}
                 handleFavorite={() => removeFavorite(pokemon)}
+                favoriteKeyUp={(event) => checkEnterKeyPressed(event, pokemon)}
                 heart={verifyFavorite(pokemon, favorites)}
               />)
           })}
