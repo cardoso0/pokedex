@@ -42,6 +42,20 @@ export const Pokedex = () => {
       fetchData()
   }, [])
 
+  const checkEnterKeyPressedToPokemon = (event, pokemon, setPokemon, setIsSearched, navigate) => {
+    let key = event.key === "Enter" || event.keyCode === 13
+    if (key) {
+      navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate)
+    }
+  }
+
+  const checkEnterKeyPressed = (event, pokemon, favorites, setFavorites) => {
+    let key = event.key === "Enter" || event.keyCode === 13
+    if (key) {
+      handleFavorite(pokemon, favorites, setFavorites)
+    }
+  }
+
   const displayPokemons = param => {
     return param.slice(pagesVisited, pagesVisited + itensPerPage)
       .map((pokemon) => {
@@ -51,7 +65,9 @@ export const Pokedex = () => {
             pokemon={pokemon}
             key={pokemon.id}
             handlePokemon={() => navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate)}
+            pokemonKeyUp={(event) => checkEnterKeyPressedToPokemon(event, pokemon, setPokemon, setIsSearched, navigate)}
             handleFavorite={() => handleFavorite(pokemon, favorites, setFavorites)}
+            favoriteKeyUp={(event) => checkEnterKeyPressed(event, pokemon, favorites, setFavorites)}
             heart={verifyFavorite(pokemon, favorites)}
           />
         )
