@@ -37,6 +37,7 @@ export const Trainers = () => {
         <S.Trainers>
           {trainers.map((item, index) =>
             <Trainer
+              tab={8}
               keyUp={(event) => checkEnterKeyPressed(event, item)}
               key={index}
               select={() => handleClick(item)}
