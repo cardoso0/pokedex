@@ -15,6 +15,17 @@ export const Trainers = () => {
     setTrainer(trainerr)
   }
 
+  const setTrainerInLocalStorage = () => {
+    localStorage.setItem('trainer', JSON.stringify(trainer))
+  }
+
+  const checkEnterKeyPressed = (event, trainerr) => {
+    let key = event.key === "Enter" || event.keyCode === 13
+    if (key) {
+      setTrainer(trainerr)
+    }
+  }
+  
   return (
     <>
       <Header />
@@ -25,7 +36,9 @@ export const Trainers = () => {
         />
         <S.Trainers>
           {trainers.map((item, index) =>
-            <Trainer key={index}
+            <Trainer
+              keyUp={(event) => checkEnterKeyPressed(event, item)}
+              key={index}
               select={() => handleClick(item)}
               name={item.name}
               image={item.image}
@@ -42,7 +55,10 @@ export const Trainers = () => {
         </S.Trainers>
         <S.CallToAction>
           <h1>{t('Home.title')}</h1>
-          <button onClick={() => localStorage.setItem('trainer', JSON.stringify(trainer))}>{t('Home.btn')}</button>
+          <button
+            onClick={setTrainerInLocalStorage}
+            tabIndex={9}
+          >{t('Home.btn')}</button>
         </S.CallToAction>
       </S.Bg>
       <Footer />
