@@ -6,7 +6,7 @@ import { Context } from '../../contexts/Context'
 
 export const Form = props => {
 
-  const { placeholder } = props
+  const { placeholder, tab } = props
 
   const navigate = useNavigate()
   const [inputValue, setInputValue] = useState("")
@@ -28,6 +28,7 @@ export const Form = props => {
     <S.Bg id='busca'>
       <form action="submit" onSubmit={handleSubmit}>
         <input type="text"
+          tabIndex={tab}
           placeholder={placeholder}
           onChange={(e) => setInputValue(e.target.value.toLowerCase())}
         />

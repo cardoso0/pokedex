@@ -3,7 +3,7 @@ import * as S from './style'
 
 export const Pokemon = props => {
 
-  const { pokemon, large, medium, handlePokemon, handleFavorite, heart } = props
+  const { pokemon, large, medium, handlePokemon, handleFavorite, heart, tab, tabHeart } = props
   const { id, name } = pokemon
 
   const sprite =
@@ -12,11 +12,11 @@ export const Pokemon = props => {
 
   const pokemonType = pokemon.types[0].type.name
   return (
-    <S.Pokemon pokemonType={pokemonType} large={large} medium={medium} className={props.pkBg} >
+    <S.Pokemon pokemonType={pokemonType} large={large} medium={medium} className={props.pkBg} tabIndex={tab}>
       <S.BgName>
         <div className='pokemonId'>#{id}</div>
         <div className='pokemonName'>{firstLetterUpperCase(pokemon)}</div>
-        <div className='heart' onClick={handleFavorite}>{heart}</div>
+        <div className='heart' onClick={handleFavorite} tabIndex={tab}>{heart}</div>
       </S.BgName>
       <div className='img'>
         <img src={sprite} alt={name} onClick={handlePokemon}/>
