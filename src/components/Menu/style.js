@@ -18,11 +18,11 @@ export const Menu = styled.nav`
   a {
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
+    color: #fff;
     font-weight: bold;
     padding: 0 1rem;
   }
   a:hover {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #fff;
   }
 `
