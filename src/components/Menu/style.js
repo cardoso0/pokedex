@@ -21,6 +21,9 @@ export const Menu = styled.nav`
     color: #fff;
     font-weight: bold;
     padding: 0 1rem;
+    :focus {
+      background-color: blue;
+    }
   }
   a:hover {
     border-bottom: 1px solid #fff;
