@@ -4,6 +4,7 @@ import { trainers } from "../../components/Trainer/trainers"
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ContextTrainer } from '../../contexts/index'
+import { handleEnterKey } from '../../shared'
 
 export const Trainers = () => {
 
@@ -18,13 +19,6 @@ export const Trainers = () => {
   const setTrainerInLocalStorage = () => {
     localStorage.setItem('trainer', JSON.stringify(trainer))
   }
-
-  const checkEnterKeyPressed = (event, trainerr) => {
-    let key = event.key === "Enter" || event.keyCode === 13
-    if (key) {
-      setTrainer(trainerr)
-    }
-  }
   
   return (
     <>
@@ -38,7 +32,7 @@ export const Trainers = () => {
           {trainers.map((item, index) =>
             <Trainer
               tab={8}
-              keyUp={(event) => checkEnterKeyPressed(event, item)}
+              keyUp={(event) => handleEnterKey(event, () => setTrainer(item))}
               key={index}
               select={() => handleClick(item)}
               name={item.name}

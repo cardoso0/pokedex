@@ -1,7 +1,7 @@
 import * as S from './style'
 import { useContext, useEffect } from 'react'
 import { Footer, Header, Pokemon, Trainer } from '../../components'
-import { verifyFavorite, getItemToLocalStorage, navigateToDetailsPokemon } from '../../shared'
+import { verifyFavorite, getItemToLocalStorage, navigateToDetailsPokemon, handleEnterKey } from '../../shared'
 import { useNavigate } from 'react-router-dom'
 import { Context, ContextTrainer } from '../../contexts/index'
 
@@ -23,20 +23,6 @@ export const Favorites = () => {
 
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites))
     setFavorites(updatedFavorites)
-  }
-
-  const checkEnterKeyPressedToPokemon = (event, pokemon, setPokemon, setIsSearched, navigate) => {
-    let key = event.key === "Enter" || event.keyCode === 13
-    if (key) {
-      navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate)
-    }
-  }
-
-  const checkEnterKeyPressed = (event, pokemon) => {
-    let key = event.key === "Enter" || event.keyCode === 13
-    if (key) {
-      removeFavorite(pokemon)
-    }
   }
 
   useEffect(() => {
@@ -69,9 +55,11 @@ export const Favorites = () => {
                 pokemon={pokemon}
                 key={pokemon.id}
                 handlePokemon={() => navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate)}
-                pokemonKeyUp={(event) => checkEnterKeyPressedToPokemon(event, pokemon, setPokemon, setIsSearched, navigate)}
+                pokemonKeyUp={(event) => handleEnterKey(event, () =>
+                  navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate))}
                 handleFavorite={() => removeFavorite(pokemon)}
-                favoriteKeyUp={(event) => checkEnterKeyPressed(event, pokemon)}
+                favoriteKeyUp={(event) => handleEnterKey(event, () =>
+                  removeFavorite(pokemon))}
                 heart={verifyFavorite(pokemon, favorites)}
               />)
           })}
