@@ -7,7 +7,8 @@ import { Footer, Form, Header, Pokemon, Title } from '../../components'
 import { usePagination } from '../../hooks/usePagination'
 import { getAllPokemons } from '../../services/getPokemons'
 import { Context } from '../../contexts/index'
-import { verifyFavorite, handleFavorite, getItemToLocalStorage, navigateToDetailsPokemon } from '../../shared'
+import { verifyFavorite, handleFavorite, getItemToLocalStorage,
+   navigateToDetailsPokemon, handleEnterKey } from '../../shared'
 
 export const Pokedex = () => {
 
@@ -48,10 +49,13 @@ export const Pokedex = () => {
       .map((pokemon) => {
         return (
           <Pokemon
+            tab={9}
             pokemon={pokemon}
             key={pokemon.id}
             handlePokemon={() => navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate)}
+            pokemonKeyUp={(event) => handleEnterKey(event, () => navigateToDetailsPokemon(pokemon, setPokemon, setIsSearched, navigate))}
             handleFavorite={() => handleFavorite(pokemon, favorites, setFavorites)}
+            favoriteKeyUp={(event) => handleEnterKey(event, () => handleFavorite(pokemon, favorites, setFavorites))}
             heart={verifyFavorite(pokemon, favorites)}
           />
         )
@@ -71,7 +75,10 @@ export const Pokedex = () => {
           title={t('Title.title')}
           subtitle={t('Title.subtitle')}
         />
-        <Form placeholder={t('Form.placeholder')} />
+        <Form
+          placeholder={t('Form.placeholder')}
+          tab={8}
+        />
         {!loading && pokemons ? (
           <S.Container>
             {verifyPokemonItIsSaved}

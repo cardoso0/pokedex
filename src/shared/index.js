@@ -4,6 +4,7 @@ import { handleFavorite } from "./handleFavorite"
 import { verifyFavorite } from "./verifyFavorite"
 import { getItemToLocalStorage } from "./getItemToLocalStorage"
 import { navigateToDetailsPokemon } from "./navigateToDetailsPokemon"
+import { handleEnterKey } from "./handleEnterKey"
 
 export {
   colors,
@@ -11,5 +12,6 @@ export {
   handleFavorite,
   verifyFavorite,
   getItemToLocalStorage,
-  navigateToDetailsPokemon
+  navigateToDetailsPokemon,
+  handleEnterKey
 }

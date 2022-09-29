@@ -22,7 +22,10 @@ export const DetailsPokemon = () => {
     <div>
       <Header />
       <S.Height>
-        <Form placeholder={t('Form.placeholder')} />
+        <Form 
+          placeholder={t('Form.placeholder')} 
+          tab={8}
+        />
         {isSearched &&
           <div>
             {pokemon
@@ -36,7 +39,8 @@ export const DetailsPokemon = () => {
                   <li><span>Atq³:</span> {firstLetterUpperCase(2)}</li>
                   <li><span>Atq⁴:</span> {firstLetterUpperCase(3)}</li>
                 </S.Details>
-                <Pokemon pkBg={'pokemonBg'}
+                <Pokemon 
+                  pkBg={'pokemonBg'}
                   pokemon={pokemon}
                   large={'20%'}
                   medium={'25%'}

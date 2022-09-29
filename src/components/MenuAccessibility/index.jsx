@@ -8,11 +8,11 @@ export const MenuAccessibility = () => {
 
   return (
     <div>
-      <button onClick={switchTheme}>Altere o Tema</button>
+      <button tabIndex={4} onClick={switchTheme}>Altere o Tema</button>
       <div>
-        <button onClick={textSizeDecrease}>A-</button>
-        <button onClick={textSizeDefault}>A</button>
-        <button onClick={textSizeIncrease}>A+</button>
+        <button tabIndex={5} onClick={textSizeDecrease}>A-</button>
+        <button tabIndex={6} onClick={textSizeDefault}>A</button>
+        <button tabIndex={7} onClick={textSizeIncrease}>A+</button>
       </div>
     </div>
   )
