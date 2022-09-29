@@ -48,7 +48,7 @@ export const Favorites = () => {
           obsB={trainer.obsB}
         />
         <S.Pokemons>
-          {favorites.map((pokemon) => {
+        {favorites && favorites.map((pokemon) => {
             return (
               <Pokemon pkBg={'pokemonBg'}
                 tab={9}

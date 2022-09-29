@@ -29,7 +29,8 @@ export const Pokedex = () => {
       setPokemons(response)
       setPokemonSaved(response)
     } catch {
-      setError(true)
+      // setError(true) Arrumar isso.
+      console.log('A requisição não pode ser feita :/')
     }
     setLoading(false)
   }
@@ -78,9 +79,7 @@ export const Pokedex = () => {
           placeholder={t('Form.placeholder')}
           tab={8}
         />
-        {loading ? (
-          <S.Loading />
-        ) : (
+        {!loading && pokemons ? (
           <S.Container>
             {verifyPokemonItIsSaved}
             <ReactPaginate
@@ -98,6 +97,8 @@ export const Pokedex = () => {
               onClick={() => window.scrollTo(0, 0)}
             />
           </S.Container>
+        ) : (
+          <S.Loading />
         )}
       </S.Bg>
       <Footer />
