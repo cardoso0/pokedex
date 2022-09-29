@@ -4,6 +4,7 @@ import { trainers } from "../../components/Trainer/trainers"
 import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ContextTrainer } from '../../contexts/index'
+import { handleEnterKey } from '../../shared'
 
 export const Trainers = () => {
 
@@ -15,6 +16,10 @@ export const Trainers = () => {
     setTrainer(trainerr)
   }
 
+  const setTrainerInLocalStorage = () => {
+    localStorage.setItem('trainer', JSON.stringify(trainer))
+  }
+  
   return (
     <>
       <Header />
@@ -25,7 +30,10 @@ export const Trainers = () => {
         />
         <S.Trainers>
           {trainers.map((item, index) =>
-            <Trainer key={index}
+            <Trainer
+              tab={8}
+              keyUp={(event) => handleEnterKey(event, () => setTrainer(item))}
+              key={index}
               select={() => handleClick(item)}
               name={item.name}
               image={item.image}
@@ -42,7 +50,10 @@ export const Trainers = () => {
         </S.Trainers>
         <S.CallToAction>
           <h1>{t('Home.title')}</h1>
-          <button onClick={() => localStorage.setItem('trainer', JSON.stringify(trainer))}>{t('Home.btn')}</button>
+          <button
+            onClick={setTrainerInLocalStorage}
+            tabIndex={9}
+          >{t('Home.btn')}</button>
         </S.CallToAction>
       </S.Bg>
       <Footer />
