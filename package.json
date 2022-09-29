@@ -11,10 +11,8 @@
     "build": "vite build",
     "preview": "vite preview",
 
-    "deploy": "npm run build \"npm:addDist\" \"npm:addCommit\"npm:push\"",
-    "addDist": "git add dist -f",
-    "addCommit": "git commit -m 'chore(PD): updated dist'",
-    "push": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "npm run build \"npm:addDist\"",
+    "addDist": "git add dist -f"
   },
   "husky": {
     "hooks": {
