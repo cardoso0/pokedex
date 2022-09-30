@@ -9,8 +9,8 @@ export const Menu = () => {
   return (
     <S.Menu>
       <Link tabIndex={1} to='/pokedex/'>Home</Link>
-      <Link tabIndex={2} to='/pokedex/pokedexx'>Pokédex</Link>
-      <Link tabIndex={3} to='/pokedex/favorites'>{t('Menu.fav')}</Link>
+      <Link tabIndex={2} to='/pokedexx'>Pokédex</Link>
+      <Link tabIndex={3} to='/favorites'>{t('Menu.fav')}</Link>
     </S.Menu>
   )
 }
