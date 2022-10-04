@@ -6,7 +6,7 @@ import "./i18n/index"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/pokedex">
       <App />
     </BrowserRouter>
   </React.StrictMode>
