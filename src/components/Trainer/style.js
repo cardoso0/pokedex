@@ -40,6 +40,7 @@ export const Info = styled.div`
   border: 1px solid #000;
   border-radius: 0 0 10px 10px;
   min-height: 200px;
+  width: 230px;
 
   th {
     background: #FF6464;
