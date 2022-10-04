@@ -79,7 +79,9 @@ export const Pokedex = () => {
           placeholder={t('Form.placeholder')}
           tab={8}
         />
-        {!loading && pokemons ? (
+        {loading ? (
+          <S.Loading />
+        ) : (
           <S.Container>
             {verifyPokemonItIsSaved}
             <ReactPaginate
@@ -97,8 +99,6 @@ export const Pokedex = () => {
               onClick={() => window.scrollTo(0, 0)}
             />
           </S.Container>
-        ) : (
-          <S.Loading />
         )}
       </S.Bg>
       <Footer />
