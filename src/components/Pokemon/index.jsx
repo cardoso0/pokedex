@@ -7,8 +7,9 @@ export const Pokemon = props => {
   const { id, name } = pokemon
 
   const sprite =
-    `https://cdn.traction.one/pokedex/pokemon/${id}.png`
-  // `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+    // `https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${id}.svg`
+  // `https://cdn.traction.one/pokedex/pokemon/${id}.png`
+  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
 
   const pokemonType = pokemon.types[0].type.name
   return (
@@ -19,7 +20,7 @@ export const Pokemon = props => {
         <div className='heart' onClick={handleFavorite} onKeyUp={favoriteKeyUp} tabIndex={tab}>{heart}</div>
       </S.BgName>
       <div className='img'>
-        <img src={sprite} alt={name} onClick={handlePokemon} tabIndex={tab} onKeyUp={pokemonKeyUp}/>
+        <img src={sprite} alt={name} onClick={handlePokemon} tabIndex={tab} onKeyUp={pokemonKeyUp} />
       </div>
       <div className='pokemonType'>{firstLetterUpperCaseType(pokemon)}</div>
       <S.MoreDetails pokemonType={pokemonType}>
