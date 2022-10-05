@@ -5,10 +5,12 @@ import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ContextTrainer } from '../../contexts/index'
 import { handleEnterKey } from '../../shared'
+import { useNavigate } from 'react-router-dom'
 
 export const Trainers = () => {
 
   const { t } = useTranslation()
+  const navigate = useNavigate()
 
   const { trainer, setTrainer } = useContext(ContextTrainer)
 
@@ -16,8 +18,9 @@ export const Trainers = () => {
     setTrainer(trainerr)
   }
 
-  const setTrainerInLocalStorage = () => {
+  const moveToNextPage = () => {
     localStorage.setItem('trainer', JSON.stringify(trainer))
+    navigate("/pokedexx")
   }
   
   return (
@@ -51,7 +54,7 @@ export const Trainers = () => {
         <S.CallToAction>
           <h1>{t('Home.title')}</h1>
           <button
-            onClick={setTrainerInLocalStorage}
+            onClick={moveToNextPage}
             tabIndex={9}
           >{t('Home.btn')}</button>
         </S.CallToAction>
