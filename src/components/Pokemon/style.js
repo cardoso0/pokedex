@@ -18,6 +18,8 @@ export const Pokemon = styled.div`
 
   .pokemonName {
     padding: 0.5em 0 0.5em 0;
+    display: flex;
+    align-items: center;
   }
   .pokemonType {
     padding-bottom: 0.5em;
