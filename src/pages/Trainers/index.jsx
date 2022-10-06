@@ -54,7 +54,7 @@ export const Trainers = () => {
           subtitle={t('Title.subtitleH')}
         />
         <S.Trainers>
-          <Slider {...settings} className="slider">
+          <Slider {...settings} className="slider"> 
             {trainers.map((item, index) =>
               <Trainer
                 tab={8}
