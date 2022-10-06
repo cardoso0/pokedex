@@ -6,8 +6,12 @@ export const Bg = styled.div`
 `
 
 export const Trainers = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  .slider {
+    @media (min-width: 480px) {
+      display: flex !important;
+      flex-wrap: wrap;
+    }
+  }
 `
 
 export const CallToAction = styled.section`

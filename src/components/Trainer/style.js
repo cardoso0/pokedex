@@ -15,6 +15,7 @@ export const Card = styled.div`
     border: 1px solid #000;
     border-radius: 10px 10px 0 0;
     img {
+      margin: 0 auto;
       max-width: 200px;
       height: 350px;
     }
@@ -40,6 +41,7 @@ export const Info = styled.div`
   border: 1px solid #000;
   border-radius: 0 0 10px 10px;
   min-height: 200px;
+  width: 230px;
 
   th {
     background: #FF6464;
