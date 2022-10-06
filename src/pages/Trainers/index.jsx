@@ -7,6 +7,10 @@ import { ContextTrainer } from '../../contexts/index'
 import { handleEnterKey } from '../../shared'
 import { useNavigate } from 'react-router-dom'
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 export const Trainers = () => {
 
   const { t } = useTranslation()
@@ -22,7 +26,25 @@ export const Trainers = () => {
     localStorage.setItem('trainer', JSON.stringify(trainer))
     navigate("/pokedexx")
   }
-  
+
+  const settings = {
+    responsive: [
+      {
+        breakpoint: 1800,
+        settings: "unslick"
+      },
+      {
+        breakpoint: 480,
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 0,
+      },
+    ]
+  };
+
   return (
     <>
       <Header />
@@ -32,24 +54,26 @@ export const Trainers = () => {
           subtitle={t('Title.subtitleH')}
         />
         <S.Trainers>
-          {trainers.map((item, index) =>
-            <Trainer
-              tab={8}
-              keyUp={(event) => handleEnterKey(event, () => setTrainer(item))}
-              key={index}
-              select={() => handleClick(item)}
-              name={item.name}
-              image={item.image}
-              age={'Idade'}
-              textAge={item.textAge}
-              region={'Região'}
-              textRegion={item.textRegion}
-              city={'Cidade'}
-              textCity={item.textCity}
-              obsA={item.obsA}
-              obsB={item.obsB}
-            />
-          )}
+          <Slider {...settings} className="teste">
+            {trainers.map((item, index) =>
+              <Trainer
+                tab={8}
+                keyUp={(event) => handleEnterKey(event, () => setTrainer(item))}
+                key={index}
+                select={() => handleClick(item)}
+                name={item.name}
+                image={item.image}
+                age={'Idade'}
+                textAge={item.textAge}
+                region={'Região'}
+                textRegion={item.textRegion}
+                city={'Cidade'}
+                textCity={item.textCity}
+                obsA={item.obsA}
+                obsB={item.obsB}
+              />
+            )}
+          </Slider>
         </S.Trainers>
         <S.CallToAction>
           <h1>{t('Home.title')}</h1>
