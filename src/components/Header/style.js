@@ -10,10 +10,6 @@ export const Header = styled.header`
   max-width: 90%;
   margin: 0 auto;
 
-  .accessibility {
-    cursor: pointer;
-    display: none;
-  }
   .logo {
     display: flex;
     margin: 0 auto;
@@ -26,10 +22,6 @@ export const Header = styled.header`
     justify-content: space-between;
     align-items: center;
 
-    .accessibility {
-      display: flex;
-      width: 50px;
-    }
     .logo {
       width: 85%;
       padding-top: 0;
@@ -42,4 +34,39 @@ export const Header = styled.header`
       width: 100%;
     }
   }
+`
+
+export const Accessibility = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+      margin-right: 15px;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-weight: bold;
+    }
+  }
+
+  .accessibility {
+    /* display: none; */
+    position: absolute;
+    top: 20px;
+    right: 15px;
+  }
+
+  @media (min-width: 768px) {
+
+    .accessibility {
+      display: flex;
+      width: 40px;
+      position: static;
+    }
+  }
+
 `

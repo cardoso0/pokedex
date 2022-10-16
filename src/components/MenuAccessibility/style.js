@@ -1,19 +1,23 @@
 import styled from "styled-components";
 
 export const Bg = styled.div `
-  display: ${props => !props.teste ? 'none' : 'block'};
-  background-color: #ffe6ff;
+  display: ${props => !props.showMenu ? 'none' : 'block'};
+  background-color: #ffffff;
   width: 150px;
   height: 100px;
   position: absolute;
-  right: 40px;
-  /* left: 10px; */
-  top: 0px;
+  right: 5px;
+  top: 65px;
   border: 1px solid #000;
   .close {
     color: #000;
     margin-left: 90%;
     cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    right: 6%;
+    top: 108%;
   }
 `
 
