@@ -9,6 +9,7 @@ export const Bg = styled.div `
   right: 5px;
   top: 65px;
   border: 1px solid #000;
+  border-radius: 10px;
   .close {
     color: #000;
     margin-left: 90%;
