@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const Bg = styled.div`
-  // background-color: #ff0400;
   background: ${(props) => props.theme.colors.primary};
   border: ${(props) => props.theme.colors.border};
+  position: relative;
 `
 
 export const Header = styled.header`
   max-width: 90%;
   margin: 0 auto;
 
-  .pokebola {
+  .accessibility {
+    cursor: pointer;
     display: none;
   }
   .logo {
@@ -25,9 +26,9 @@ export const Header = styled.header`
     justify-content: space-between;
     align-items: center;
 
-    .pokebola {
+    .accessibility {
       display: flex;
-      width: 90px;
+      width: 50px;
     }
     .logo {
       width: 85%;
