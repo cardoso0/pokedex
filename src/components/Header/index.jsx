@@ -18,7 +18,7 @@ export const Header = () => {
           <img className="logo" src={pokedex} alt="logo pokedex" />
         </Link>
         <Menu />
-        <div onClick={() => !showMenu ? setShowMenu(true) : setShowMenu(false)}>
+        <div onClick={() => setShowMenu(true)}>
           <img className="accessibility" src={accessibility} alt="accessibility" />
         </div>
       </S.Header>

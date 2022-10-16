@@ -11,6 +11,7 @@ export const Header = styled.header`
   margin: 0 auto;
 
   .accessibility {
+    cursor: pointer;
     display: none;
   }
   .logo {
