@@ -4,14 +4,14 @@ import { useTextSize } from "../../hooks/useTextSize"
 import { useContext } from 'react'
 import { ContextAccessibility } from '../../contexts/ContextAccessibility'
 
-export const MenuAccessibility = (props) => {
+export const MenuAccessibility = () => {
 
   const { switchTheme } = useThemeContext()
   const { textSizeIncrease, textSizeDecrease, textSizeDefault } = useTextSize()
   const { showMenu, setShowMenu } = useContext(ContextAccessibility)
 
   return (
-    <S.Bg teste={showMenu} >
+    <S.Bg showMenu={showMenu} >
       <div className='close' onClick={() => setShowMenu(false)}>X</div>
       <div>
       <S.Theme>
