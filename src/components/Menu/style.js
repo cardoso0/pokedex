@@ -8,7 +8,7 @@ export const Menu = styled.nav`
   font-size: calc(93% + ${(props) => props.theme.textSize});
 
   @media (min-width: 768px) {
-    margin-right: 3rem;
+    margin-right: 1rem;
   }
 
   @media (min-width: 1024px) {
@@ -20,10 +20,13 @@ export const Menu = styled.nav`
     text-transform: uppercase;
     color: #fff;
     font-weight: bold;
-    padding: 0 1rem;
+    padding: 0 0.4rem;
     :focus {
       background-color: blue;
     }
+    @media (min-width: 768px) {
+      padding: 0 1rem;
+  }
   }
   a:hover {
     border-bottom: 1px solid #fff;
