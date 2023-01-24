@@ -1,7 +1,7 @@
 import * as S from './style'
 import { Footer, Header, Title, Trainer } from "../../components"
 import { trainers } from "../../components/Trainer/trainers"
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ContextTrainer } from '../../contexts/index'
 import { handleEnterKey } from '../../shared'
@@ -18,6 +18,8 @@ export const Trainers = () => {
 
   const { trainer, setTrainer } = useContext(ContextTrainer)
 
+  const [trainerSelected, setTrainerSelected] = useState(true)
+
   const handleClick = (trainerr) => {
     setTrainer(trainerr)
   }
@@ -25,6 +27,10 @@ export const Trainers = () => {
   const moveToNextPage = () => {
     localStorage.setItem('trainer', JSON.stringify(trainer))
     navigate("/pokedexx")
+  }
+
+  const trainerIsSelected = () => {
+    return trainer ? moveToNextPage() : setTrainerSelected(false)
   }
 
   const settings = {
@@ -54,13 +60,16 @@ export const Trainers = () => {
           subtitle={t('Title.subtitleH')}
         />
         <S.Trainers>
-          <Slider {...settings} className="slider"> 
+          <Slider {...settings} className="slider">
             {trainers.map((item, index) =>
               <Trainer
                 tab={8}
                 keyUp={(event) => handleEnterKey(event, () => setTrainer(item))}
                 key={index}
-                select={() => handleClick(item)}
+                select={() => {
+                  handleClick(item)
+                  setTrainerSelected(true)
+                }}
                 name={item.name}
                 image={item.image}
                 age={'Idade'}
@@ -77,8 +86,14 @@ export const Trainers = () => {
         </S.Trainers>
         <S.CallToAction>
           <h1>{t('Home.title')}</h1>
+          {!trainerSelected ?
+            <p>Selecione um Treinador</p>
+            :
+           (trainer &&
+            <p>Treinador selecionado: {trainer.name}</p>
+           )}
           <button
-            onClick={moveToNextPage}
+            onClick={trainerIsSelected}
             tabIndex={9}
           >{t('Home.btn')}</button>
         </S.CallToAction>

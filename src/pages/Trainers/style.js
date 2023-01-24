@@ -24,6 +24,11 @@ export const CallToAction = styled.section`
     font-weight: 600;
   }
 
+  p {
+    font-size: calc(100% + ${(props) => props.theme.textSize});
+    margin-bottom: 10px;
+  }
+
   button {
     font-size: calc(100% + ${(props) => props.theme.textSize});
     background-color: #FF6464;
