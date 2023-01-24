@@ -28,8 +28,14 @@ export const CallToAction = styled.section`
     font-size: calc(100% + ${(props) => props.theme.textSize});
     background-color: #FF6464;
     padding: 0.5rem;
-    border: 1px solid black;
+    border: 1px solid #000;
     border-radius: 8px;
     cursor: pointer;
+
+    &:hover {
+      border: 1px solid #fff;
+      color: #fff;
+      font-weight: bold;
+    }
   }
 `
