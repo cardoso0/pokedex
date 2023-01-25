@@ -34,21 +34,22 @@ export const Favorites = () => {
     <div>
       <Header />
       <S.Height>
-        <Trainer
-          tab={8}
-          name={trainer.name}
-          image={trainer.image}
-          age={'Idade'}
-          textAge={trainer.textAge}
-          region={'Região'}
-          textRegion={trainer.textRegion}
-          city={'Cidade'}
-          textCity={trainer.textCity}
-          obsA={trainer.obsA}
-          obsB={trainer.obsB}
-        />
+        {trainer.name !== undefined &&
+          <Trainer
+            tab={8}
+            name={trainer.name}
+            image={trainer.image}
+            age={'Idade'}
+            textAge={trainer.textAge}
+            region={'Região'}
+            textRegion={trainer.textRegion}
+            city={'Cidade'}
+            textCity={trainer.textCity}
+            obsA={trainer.obsA}
+            obsB={trainer.obsB}
+          />}
         <S.Pokemons>
-        {favorites && favorites.map((pokemon) => {
+          {favorites && favorites.map((pokemon) => {
             return (
               <Pokemon pkBg={'pokemonBg'}
                 tab={9}
