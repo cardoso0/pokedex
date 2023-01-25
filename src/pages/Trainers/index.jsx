@@ -22,6 +22,7 @@ export const Trainers = () => {
 
   const handleClick = (trainerr) => {
     setTrainer(trainerr)
+    setTrainerSelected(true)
   }
 
   const moveToNextPage = () => {
@@ -63,13 +64,11 @@ export const Trainers = () => {
           <Slider {...settings} className="slider">
             {trainers.map((item, index) =>
               <Trainer
+                className={"teste-treinador"}
                 tab={8}
                 keyUp={(event) => handleEnterKey(event, () => setTrainer(item))}
                 key={index}
-                select={() => {
-                  handleClick(item)
-                  setTrainerSelected(true)
-                }}
+                select={() => handleClick(item)}
                 name={item.name}
                 image={item.image}
                 age={'Idade'}

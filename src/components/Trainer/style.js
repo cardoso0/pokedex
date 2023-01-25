@@ -20,20 +20,6 @@ export const Card = styled.div`
       height: 350px;
     }
   }
-
-  @media (min-width: 1024px) {
-    :hover {
-      background-color: ${(props) => props.theme.colors.background};
-      padding: 0 25px 10px 25px;
-      transition: transform .3s; /* Animation */
-      transform: scale(1);
-      border: 1px solid ${(props) => props.theme.colors.secondary};
-      border-radius: 15px;
-      figure {
-        border: none;
-      }
-    }
-  }
 `
 
 export const Info = styled.div`
