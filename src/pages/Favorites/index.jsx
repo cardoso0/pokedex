@@ -1,9 +1,10 @@
 import * as S from './style'
 import { useContext, useEffect } from 'react'
-import { Footer, Header, Pokemon, Trainer } from '../../components'
+import { Footer, Header, Pokemon, Title, Trainer } from '../../components'
 import { verifyFavorite, getItemToLocalStorage, navigateToDetailsPokemon, handleEnterKey } from '../../shared'
 import { useNavigate } from 'react-router-dom'
 import { Context, ContextTrainer } from '../../contexts/index'
+import { t } from 'i18next'
 
 export const Favorites = () => {
 
@@ -33,6 +34,9 @@ export const Favorites = () => {
   return (
     <div>
       <Header />
+      <Title
+          title={t('Favoritos.title')}
+        />
       <S.Height>
         {trainer.name !== undefined &&
           <Trainer
