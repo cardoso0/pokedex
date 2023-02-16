@@ -258,9 +258,6 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     color: #fff;
     font-weight: bold;
     padding: 0 0.4rem;
-    :focus {
-      background-color: blue;
-    }
     @media (min-width: 768px) {
       padding: 0 1rem;
   }
