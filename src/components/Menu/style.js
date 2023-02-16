@@ -21,9 +21,6 @@ export const Menu = styled.nav`
     color: #fff;
     font-weight: bold;
     padding: 0 0.4rem;
-    :focus {
-      background-color: blue;
-    }
     @media (min-width: 768px) {
       padding: 0 1rem;
   }
