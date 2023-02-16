@@ -19,10 +19,12 @@ export const Trainers = () => {
   const { trainer, setTrainer } = useContext(ContextTrainer)
 
   const [trainerSelected, setTrainerSelected] = useState(true)
+  const [trainerClicked, setTrainerClicked] = useState('')
 
   const handleClick = (trainerr) => {
     setTrainer(trainerr)
     setTrainerSelected(true)
+    setTrainerClicked(trainerr.name)
   }
 
   const moveToNextPage = () => {
@@ -62,23 +64,23 @@ export const Trainers = () => {
         />
         <S.Trainers>
           <Slider {...settings} className="slider">
-            {trainers.map((item, index) =>
+            {trainers.map((trainer, index) =>
               <Trainer
-                className={"teste-treinador"}
+                className={`viewed-trainer ${trainerClicked == trainer.name ? "selected-trainer" : ""}`}
                 tab={8}
-                keyUp={(event) => handleEnterKey(event, () => setTrainer(item))}
+                keyUp={(event) => handleEnterKey(event, () => setTrainer(trainer))}
                 key={index}
-                select={() => handleClick(item)}
-                name={item.name}
-                image={item.image}
+                select={() => handleClick(trainer)}
+                name={trainer.name}
+                image={trainer.image}
                 age={'Idade'}
-                textAge={item.textAge}
+                textAge={trainer.textAge}
                 region={'Região'}
-                textRegion={item.textRegion}
+                textRegion={trainer.textRegion}
                 city={'Cidade'}
-                textCity={item.textCity}
-                obsA={item.obsA}
-                obsB={item.obsB}
+                textCity={trainer.textCity}
+                obsA={trainer.obsA}
+                obsB={trainer.obsB}
               />
             )}
           </Slider>

@@ -3,12 +3,12 @@ import * as S from './style'
 export const Trainer = props => {
 
   const { name, image, age, textAge, region, textRegion,
-    city, textCity, obsA, obsB, select, keyUp, tab, className } = props
+    city, textCity, obsA, obsB, select, keyUp, tab, className, onClick } = props
 
   return (
-    <S.Card tabIndex={tab} onKeyUp={keyUp} className={className}>
+    <S.Card tabIndex={tab} onKeyUp={keyUp} className={className} onClick={select}>
       <h1>{name}</h1>
-      <figure onClick={select}>
+      <figure>
         <img src={image} alt={name} />
       </figure>
       <S.Info>

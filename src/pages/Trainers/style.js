@@ -13,20 +13,31 @@ export const Trainers = styled.div`
     }
   }
 
-  .teste-treinador {
+  .viewed-trainer {
     @media (min-width: 1024px) {
-    :hover {
-      background-color: ${(props) => props.theme.colors.background};
-      padding-right: 1px;
-      transition: transform .3s; /* Animation */
-      transform: scale(1);
-      border: 1px solid ${(props) => props.theme.colors.secondary};
-      border-radius: 15px;
-      figure {
-        border: none;
+      :hover {
+        background-color: ${(props) => props.theme.colors.background};
+        padding-right: 1px;
+        transition: transform .3s; /* Animation */
+        transform: scale(1);
+        border: 1px solid ${(props) => props.theme.colors.secondary};
+        border-radius: 15px;
+        figure {
+          border: none;
+        }
       }
     }
   }
+  .selected-trainer {
+    background-color: ${(props) => props.theme.colors.background};
+    padding-right: 1px;
+    transition: transform .3s; /* Animation */
+    transform: scale(1);
+    border: 1px solid ${(props) => props.theme.colors.secondary};
+    border-radius: 15px;
+    figure {
+      border: none;
+    }
   }
 `
 
