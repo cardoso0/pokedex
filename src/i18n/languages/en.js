@@ -19,6 +19,9 @@ const messages = {
       Home: {
         title: "Don't falter like Ash",
         btn: "Form your Pokémon team!"
+      },
+      Favoritos: {
+        title: "Assemble your pokemon team now!"
       }
     }
   }
