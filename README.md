@@ -23,7 +23,7 @@ Clique <a href="https://cardoso0.github.io/pokedex/" target="_blank">aqui</a> pa
 # Clone este repositório
 $ git clone https://github.com/cardoso0/pokedex
 
-# Não esqueça de navegar até o pasta
+# Não esqueça de navegar até a pasta
 $ cd pokedex
 
 # Instale as dependências
