@@ -15,7 +15,7 @@
   <img width="320" height="162" src="src/assets/readme/favoritos.gif" alt="demonstração favoritos">
 </div>
 
-Clique <a href="https://cardoso0.github.io/pokedex/" target="_blank">aqui</a> para visualizar o projeto no seu navegador
+Clique <a href="https://pokedex-mauve-eight.vercel.app/" target="_blank">aqui</a> para visualizar o projeto no seu navegador
 
 ### 🎲 Rodando o projeto na sua maquina
 
