@@ -1,7 +1,7 @@
 import * as S from './style'
 import { Footer, Header, Title, Trainer } from "../../components"
 import { trainers } from "../../components/Trainer/trainers"
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ContextTrainer } from '../../contexts/index'
 import { handleEnterKey } from '../../shared'
@@ -15,11 +15,11 @@ export const Trainers = () => {
 
   const { t } = useTranslation()
   const navigate = useNavigate()
-
   const { trainer, setTrainer } = useContext(ContextTrainer)
 
   const [trainerSelected, setTrainerSelected] = useState(true)
   const [trainerClicked, setTrainerClicked] = useState('')
+  const [isMobile, setIsMobile] = useState(false)
 
   const handleClick = (trainerr) => {
     setTrainer(trainerr)
@@ -36,22 +36,23 @@ export const Trainers = () => {
     return trainer ? moveToNextPage() : setTrainerSelected(false)
   }
 
-  const settings = {
-    responsive: [
-      {
-        breakpoint: 1800,
-        settings: "unslick"
-      },
-      {
-        breakpoint: 480,
-        dots: true,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        initialSlide: 0,
-      },
-    ]
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
+  const sliderSettings = {
+    dots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
   };
 
   return (
@@ -63,27 +64,51 @@ export const Trainers = () => {
           subtitle={t('Title.subtitleH')}
         />
         <S.Trainers>
-          <Slider {...settings} className="slider">
-            {trainers.map((trainer, index) =>
-              <Trainer
-                className={`viewed-trainer ${trainerClicked == trainer.name ? "selected-trainer" : ""}`}
-                tab={8}
-                keyUp={(event) => handleEnterKey(event, () => setTrainer(trainer))}
-                key={index}
-                select={() => handleClick(trainer)}
-                name={trainer.name}
-                image={trainer.image}
-                age={'Idade'}
-                textAge={trainer.textAge}
-                region={'Região'}
-                textRegion={trainer.textRegion}
-                city={'Cidade'}
-                textCity={trainer.textCity}
-                obsA={trainer.obsA}
-                obsB={trainer.obsB}
-              />
-            )}
-          </Slider>
+          {isMobile ? (
+            <Slider {...sliderSettings} className="slider">
+              {trainers.map((trainer, index) => (
+                <Trainer
+                  className={`viewed-trainer ${trainerClicked == trainer.name ? "selected-trainer" : ""}`}
+                  tab={8}
+                  keyUp={(event) => handleEnterKey(event, () => setTrainer(trainer))}
+                  key={index}
+                  select={() => handleClick(trainer)}
+                  name={trainer.name}
+                  image={trainer.image}
+                  age={'Idade'}
+                  textAge={trainer.textAge}
+                  region={'Região'}
+                  textRegion={trainer.textRegion}
+                  city={'Cidade'}
+                  textCity={trainer.textCity}
+                  obsA={trainer.obsA}
+                  obsB={trainer.obsB}
+                />
+              ))}
+            </Slider>
+          ) : (
+            <div className="trainers-grid">
+              {trainers.map((trainer, index) => (
+                <Trainer
+                  className={`viewed-trainer ${trainerClicked == trainer.name ? "selected-trainer" : ""}`}
+                  tab={8}
+                  keyUp={(event) => handleEnterKey(event, () => setTrainer(trainer))}
+                  key={index}
+                  select={() => handleClick(trainer)}
+                  name={trainer.name}
+                  image={trainer.image}
+                  age={'Idade'}
+                  textAge={trainer.textAge}
+                  region={'Região'}
+                  textRegion={trainer.textRegion}
+                  city={'Cidade'}
+                  textCity={trainer.textCity}
+                  obsA={trainer.obsA}
+                  obsB={trainer.obsB}
+                />
+              ))}
+            </div>
+          )}
         </S.Trainers>
         <S.CallToAction>
           <h1>{t('Home.title')}</h1>

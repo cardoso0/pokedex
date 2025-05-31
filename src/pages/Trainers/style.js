@@ -5,11 +5,39 @@ export const Bg = styled.div`
   margin: 0 auto;
 `
 
-export const Trainers = styled.div`
+ export const Trainers = styled.div`
+  .trainers-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
   .slider {
     @media (min-width: 480px) {
       display: flex !important;
       flex-wrap: wrap;
+    }
+    .slick-prev:before, .slick-next:before {
+      color: #000;
+      opacity: 1;
+    }
+    .slick-arrow {
+      &.slick-prev {
+        left: 200px;
+        z-index: 10;
+      }
+      &.slick-next {
+        z-index: 10;
+        right: 200px;
+      }
+    }
+    .slick-dots {
+      bottom: 3px;
+
+      li button:before {
+        font-size: 15px;
+      }
     }
   }
 
